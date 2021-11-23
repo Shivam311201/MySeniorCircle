@@ -1,0 +1,259 @@
+.Home_style{
+    margin-left: -7px;
+    width: 100.55%;
+}
+.nav_row{
+    display: flex;
+    flex-direction: row;
+    background-color: #ddeeff;     /* e8f1fc */
+    margin-top: -10px !important;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    width: 100%;
+}
+.logo_img{
+    margin-top: 4px;
+    margin-left: 30px;   
+    height:50px;
+    width: 55px;
+}
+.Fea1_title{
+    text-align: center;
+    margin-top: 20px;
+    color: #181D31;
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px; 
+    font-weight: 700;
+}
+.blogs_but{
+    height: 45px;
+    width: 80px;
+    border-radius: 4px;
+    border: #0B0D17;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    color: #fff;
+    margin-top: -15px;
+    margin-left: 300px;
+    background-color: #0B0D17;
+}
+.blogs2_but{
+    height: 45px;
+    width: 110px;
+    border-radius: 4px;
+    border: #0B0D17;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    color: #fff;
+    margin-top: -15px;
+    margin-left: 300px;
+    background-color: #0B0D17;
+}
+.blogs_but:hover{
+    background-color: #142F43;
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+.blogs2_but:hover{
+    background-color: #142F43;
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+.fea2img_style{
+    height:400px;
+    width: 500px;
+}
+.Anchor-style{
+    text-decoration: none;
+    color: white;
+}
+.Inputstyle{
+    width:250px;
+    border-radius: 8px;
+    height: 35px;
+    margin-top: 10px;
+    margin-left: 3px;
+    padding-left: 10px;
+    color: #D9DBE1;
+}  
+.footer-1{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 15px;
+}
+.footer-2{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+.footer-3{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}  
+.Anchor-style:hover{
+    color:#D9DBE1;
+}  
+.landing_title{
+    margin-top: -300px;
+    margin-left: 35px;
+}
+.landing_intro{
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px; 
+    font-weight: 550;    
+    color: #112031;
+    margin-left: 10px;
+}
+.trends{
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px; 
+    font-weight: 700;
+    color: #181D31;
+    margin-top: 82px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+.landing_senior{
+    font-family: 'Roboto Slab', serif;
+    font-size: 70px; 
+    font-weight: 600;
+    color: #181D31;
+    margin-top: -10px;
+}
+.landing_line{
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px; 
+    font-weight: 500;
+    color: #090910;
+    margin-top: 10px;
+}
+.coverPhoto_style{
+    width:60%;
+    height: 520px;
+    margin-left: 508px;
+}
+.nav_options{
+    margin-top: 13px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px; 
+    font-weight: 300;
+    margin-left: 20px; 
+}
+.nav_options:hover{
+    color:dimgray;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.Logo_title{
+    margin-top: 7px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 28px; 
+    font-weight: 600;
+    margin-left: 15px;
+    color: #142F43;
+}
+.pages_option{
+    display: flex;
+    flex-direction: row;
+    margin-left: 460px;
+}
+.button_class{
+    margin-top: 7px;
+    margin-left: 120px;
+}
+.fea1_para{
+    padding-left: 70px;
+    padding-right: 50px;
+    padding-top: 10px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px; 
+    font-weight: 400;
+    color: #181D31;
+}
+.button_login{
+  height: 43px;
+  width: 70px;
+  border-radius: 4px;
+  border: #0B0D17;
+  font-family: 'Roboto Slab', serif;
+  font-size: 17px;
+  color: #fff;
+  background-color: #0B0D17;
+}
+.button_login:hover{
+    background-color: #142F43;
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+.button_signup{
+    height: 43px;
+    width: 85px;
+    border: #0B0D17;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;  
+    color: #fff;
+    background-color: #0B0D17;
+}
+.button_signup:hover{
+    background-color: #142F43;
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.fadeIn{
+    -webkit-animation-name:fadeIn;
+    animation-name:fadeIn;
+}
+@-webkit-keyframes fadeIn{
+    0%{
+    opacity:0;}
+    to{opacity:1;}
+}
+@keyframes fadeIn{
+    0%{
+    opacity:0;}
+    to{opacity:1;}
+}
+.fadeInUp{
+    -webkit-animation-name:fadeInUp;
+    animation-name:fadeInUp;
+}
+@-webkit-keyframes fadeInUp{
+0%{
+    opacity:0;
+    -webkit-transform:translate3d(0,-100%,0);
+    transform:translate3d(0,-100%,0);
+    }
+    to{
+    opacity:1;
+    -webkit-transform:none;
+    transform:none;}
+}
+@keyframes fadeInUp{
+0%{
+    opacity:0;
+    -webkit-transform:translate3d(0,-100%,0);
+    transform:translate3d(0,-100%,0);
+    }
+    to{
+    opacity:1;
+    -webkit-transform:none;
+    transform:none;}
+}
