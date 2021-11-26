@@ -1,0 +1,127 @@
+.singleBlog_title{
+    font-family: 'Roboto Slab', serif;
+    font-size: 45px; 
+    font-weight: 600;
+    margin-left: 100px;
+    padding-top: 50px;
+    color: #181D31;    
+}
+.singleblog_date{
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px; 
+    font-weight: 500;
+    margin-left: 90px;
+    padding-top: 10px;
+    color: #181D31;    
+}
+.singleblog_img{
+    height:650px;
+    width: 560px;
+    margin-left: 180px;
+    margin-top: 60px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.button_grp{
+    margin-left: 30px;
+    margin-top: 240px;
+}
+.like_but{
+    margin-bottom: 80px;
+    align-items: center;
+}
+.like_icon:hover{
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+}
+.dislike_but{
+    align-items: center;
+    margin-bottom: 80px;
+}
+.dislike_icon:hover{
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+}
+.delete_icon:hover{
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+    animation-duration: 1s;
+    animation-delay: 0.5s;    
+}
+.userbutton{
+    display: inline;
+    margin-left: 40px;
+    margin-top: -200px;
+}
+.like_cnt{
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px; 
+    font-weight: 600;
+    color: #ff6347;   
+    margin-left: 35px;
+    margin-top: -15px;
+    margin-bottom: -5px;
+}
+.dislike_cnt{
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px; 
+    font-weight: 600;
+    color: #3cb371;   
+    margin-left: 35px;
+    margin-top: -23px;
+}
+.but_title{
+    margin-left: -7px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px; 
+    font-weight: 600;
+    color: #181D31;   
+}
+.singleblog_content{
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px; 
+    font-weight: 500;
+    margin-left: 160px;
+    margin-right: 100px;
+    color: #0B0D17;
+    padding-bottom: 20px;
+}
+.writerName{
+    font-family: 'Roboto Slab', serif;
+    font-size: 27px; 
+    font-weight: 600;
+    margin-left: 160px;
+    margin-right: 100px;
+    color: #0B0D17;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.writerPos{
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px; 
+    font-weight: 500;
+    margin-left: 160px;
+    margin-right: 100px;
+    color: #0B0D17;
+    padding-bottom: 20px;
+}
+.end_line1{
+  height:0px;
+  width:1050px;
+  background-color: grey;
+  margin-top: -5px;
+  margin-left: 140px;
+  border:1px solid gray;
+}
+.end_line2{
+  height:0px;
+  width:380px;
+  background-color: grey;
+  margin-top: -5px;
+  margin-left: 140px;
+  border:1px solid gray;
+}
