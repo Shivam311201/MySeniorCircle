@@ -1,20 +1,28 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import About_flow from "./About/about_flow";
 import Blog_flow from "./Blogs/Blog_flow";
 import Home_flow from "./Home/Home_flow";
 import Login_flow from "./Login/Login_flow";
 import SingleBlog_flow from "./SingleBlog/SingleBlog_flow";
 import User_flow from "./User_page/user_flow";
-
 function App() {
   return (
-    <div>
-    {/* <Home_flow/> */}
-    {/* <Login_flow/> */}
-    {/* <Blog_flow/> */}
-    {/* <User_flow/> */}
-    <SingleBlog_flow/>
-    </div>
-  );
+    <Router>
+    <Routes>
+    {/* <Route path="/signup" >
+      <Login_flow val={true}/>
+    </Route>
+    <Route path="/login" >
+      <Login_flow val={false}/>
+    </Route> */}
+    <Route exact path="/" element={<Home_flow/>}/>
+    <Route exact path="/about" element={<About_flow/>}/>
+    <Route exact path="/blogs" element={<Blog_flow/>}/>
+    <Route exact path="/blogs/1" element={<SingleBlog_flow/>}/>
+    <Route exact path="/profile/2" element={<User_flow/>}/>
+    </Routes>
+    </Router>);
 }
 
 export default App;

@@ -6,26 +6,31 @@ import { CSSTransition } from "react-transition-group";
 import "./blog_style.css";
 function Blog_flow()
 {
+    var prevScrollpos = window.pageYOffset;
     const[arrowVal,setArrow]=useState(false);
-    const[stickyVal,setSticky]=useState(true);
+    const[FixedVal,setFixed]=useState(true);
+    const[Nav,setNav]=useState(1);
     window.onscroll=()=>{
+        //For setting the arrow
         if(window.scrollY <=650)
         setArrow(false);
         else setArrow(true);
+
+        //For setting sidebar
         if((window.document.body.offsetHeight-window.scrollY)<801)
-        setSticky(false);
-        else setSticky(true);
+        setFixed(false);
+        else setFixed(true);
+
+        //For setting navbar
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos)
+            setNav(1);   
+         else setNav(2);
+        prevScrollpos = currentScrollPos;
     };
     return (<div>
-         <CSSTransition
-            in={stickyVal}
-            timeout={100}
-            className="alert"
-            unmountOnExit
-            >
-            <Navbar/>
-        </CSSTransition>   
-         <SearchBar arrowVal={arrowVal} stickyVal={stickyVal}/>
+         {(Nav===1)&&FixedVal?<Navbar Nav={Nav}/>:""}
+         <SearchBar Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>
          <Footer/>
     </div>);
 }

@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import Logo from "../images/logo.png"
-import "./blog_style.css";
 function Navbar()
 {
-  return (<div className="nav_row" style={{position:"fixed"}}>
+  return (<div className="nav_row">
      <img src={Logo} className="logo_img"/>
      <div className="Logo_title">Senior Circle</div>
      <div className="pages_option">
