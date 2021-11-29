@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
-import Logo from "../images/logo.png"
+import Logo from "../images/logo.png";
+import {Link} from "react-router-dom";
 function Navbar()
 {
   return (<div className="nav_row">
-     <img src={Logo} className="logo_img"/>
-     <div className="Logo_title">Senior Circle</div>
+     <Link style={{textDecoration:"none"}} to="/"><img src={Logo} className="logo_img"/></Link>
+     <Link style={{textDecoration:"none"}} to="/"><div className="Logo_title">Senior Circle</div></Link>
      <div className="pages_option">
-     <div className="nav_options">Home</div>
-     <div className="nav_options">About</div>
-     <div className="nav_options">Blogs</div>
-     <div className="nav_options">My Profile</div>
+     <Link style={{textDecoration:"none"}} to="/"><div className="nav_options">Home</div></Link>
+     <Link style={{textDecoration:"none"}} to="/about"><div className="nav_options">About</div></Link>
+     <Link style={{textDecoration:"none"}} to="/blogs"><div className="nav_options">Blogs</div></Link>
+     <Link style={{textDecoration:"none"}} to="/profile/2"><div className="nav_options">My Profile</div></Link>
      </div>
      <div className="button_class">
-     <button className="button_logout">Log Out</button>
+     <Link style={{textDecoration:"none"}} to="/"><button className="button_logout">Log Out</button></Link>
      </div>
    </div>);
 }

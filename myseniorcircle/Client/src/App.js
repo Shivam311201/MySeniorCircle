@@ -10,13 +10,9 @@ function App() {
   return (
     <Router>
     <Routes>
-    {/* <Route path="/signup" >
-      <Login_flow val={true}/>
-    </Route>
-    <Route path="/login" >
-      <Login_flow val={false}/>
-    </Route> */}
     <Route exact path="/" element={<Home_flow/>}/>
+    <Route exact path="/signup" element={<Login_flow val={true}/>}/>
+    <Route exact path="/login" element={<Login_flow val={false}/>}/>
     <Route exact path="/about" element={<About_flow/>}/>
     <Route exact path="/blogs" element={<Blog_flow/>}/>
     <Route exact path="/blogs/1" element={<SingleBlog_flow/>}/>

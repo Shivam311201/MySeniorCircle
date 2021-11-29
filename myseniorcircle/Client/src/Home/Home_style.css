@@ -144,6 +144,7 @@
     font-size: 20px; 
     font-weight: 300;
     margin-left: 20px; 
+    color: #0B0D17;
 }
 .nav_options:hover{
     color:dimgray;
@@ -235,10 +236,6 @@
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
-.fadeIn{
-    -webkit-animation-name:fadeIn;
-    animation-name:fadeIn;
-}
 @-webkit-keyframes fadeIn{
     0%{
     opacity:0;}
@@ -249,9 +246,9 @@
     opacity:0;}
     to{opacity:1;}
 }
-.fadeInUp{
-    -webkit-animation-name:fadeInUp;
-    animation-name:fadeInUp;
+.fadeIn{
+    -webkit-animation-name:fadeIn;
+    animation-name:fadeIn;
 }
 @-webkit-keyframes fadeInUp{
 0%{
@@ -274,4 +271,8 @@
     opacity:1;
     -webkit-transform:none;
     transform:none;}
+}
+.fadeInUp{
+    -webkit-animation-name:fadeInUp;
+    animation-name:fadeInUp;
 }

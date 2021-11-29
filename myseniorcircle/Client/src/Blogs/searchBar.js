@@ -14,23 +14,22 @@ function SearchBar(props)
    return (<div>
        <Row className="m-0 p-0">
            <Col className="m-0 p-0" lg={4} md={4} sm={0} xs={0}>
-               {props.FixedVal&&(<div className={props.Nav==1?"blog_sidebar1 blog_sidebar2":"blog_sidebar1"}>
+               {props.FixedVal&&(<div className={props.Nav==1?"blog_sidebar1 blog_sidebar2":"blog_sidebar1 blog_sidebar4"}>
                    <div className="sidebar_title">Blogs</div>
                    <img src={Blog} className="sidebar_img"/>
                    <div className="sidebar_content"><i>“Blogs of experience which takes someone financially or someone medically, but teaches you like no other.”</i></div>
                </div>)}
-               {!props.FixedVal&&(<div className={props.Nav==1?"blog_sidebar blog_sidebar3":"blog_sidebar"}>
+               {!props.FixedVal&&(<div className={props.Nav==1?"blog_sidebar blog_sidebar3":"blog_sidebar blog_sidebar4"}>
                    <div className="sidebar_content"><i>“Blogs of experience which takes someone financially or someone medically, but teaches you like no other.”</i></div>
                    <img src={Blog} className="sidebar_img"/>
                    <div className="sidebar_title">Blogs</div>
                </div>)}
            </Col>
            <Col className="m-0 p-0" lg={8} md={8} sm={12} xs={12}>
-           {(props.Nav===1)&&props.FixedVal&&<div className="Search_bar">
+           <div className={((props.Nav===1)&&props.FixedVal)?"Search_bar1":"Search_bar2"}>
                    <FontAwesomeIcon className="searchIcon" icon={faSearch} />
                    <input type="text" className="searchInput" placeholder="Search by title.."></input>
-               </div>}
-            
+               </div>
             <Row className="m-0 p-0">
                 <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>
                     <div className="blog_outerArea">

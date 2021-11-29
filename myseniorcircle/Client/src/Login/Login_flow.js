@@ -19,22 +19,22 @@ function Login_flow(props)
  return(
     //  e8f1fc
      <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}}>
-    <CSSTransition
+    {/* <CSSTransition
     in={isSignup}
     timeout={1000}
     className="alert"
     unmountOnExit
-    >
-    <Signup formtype={setSignUp}/>
-    </CSSTransition>
-    <CSSTransition
+    > */}
+    {isSignup&&<Signup formtype={setSignUp}/>}
+    {/* </CSSTransition> */}
+    {/* <CSSTransition
     in={!isSignup}
     timeout={1000}
     className="alert"
     unmountOnExit
-    >
-    <Login formtype={setSignUp}/>
-    </CSSTransition>
+    > */}
+    {!isSignup&&<Login formtype={setSignUp}/>}
+    {/* </CSSTransition> */}
     </div>
  );
 }

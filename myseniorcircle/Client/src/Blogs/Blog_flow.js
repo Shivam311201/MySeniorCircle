@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SearchBar from "./searchBar";
-import { CSSTransition } from "react-transition-group";
+import { Transition } from "react-transition-group";
 import "./blog_style.css";
 function Blog_flow()
 {
@@ -10,6 +10,7 @@ function Blog_flow()
     const[arrowVal,setArrow]=useState(false);
     const[FixedVal,setFixed]=useState(true);
     const[Nav,setNav]=useState(1);
+
     window.onscroll=()=>{
         //For setting the arrow
         if(window.scrollY <=650)
@@ -28,8 +29,9 @@ function Blog_flow()
          else setNav(2);
         prevScrollpos = currentScrollPos;
     };
+
     return (<div>
-         {(Nav===1)&&FixedVal?<Navbar Nav={Nav}/>:""}
+         <Navbar Nav={Nav} FixedVal={FixedVal}/>
          <SearchBar Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>
          <Footer/>
     </div>);
