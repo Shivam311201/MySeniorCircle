@@ -2,8 +2,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
+import { signup } from "../Actions/user";
 import Col from "react-bootstrap/Col";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux"; 
 import "./login_style.css";
 import {InputAdornment,IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
@@ -15,6 +17,26 @@ function Signup(props)
 {
   const [showPassword, setShowPassword] = useState(false);  
   const handleShowPassword = () => setShowPassword(!showPassword);
+  const navigate=useNavigate();
+  const FormFormat={
+    firstname:"",
+    lastname:"",
+    emailid:"",
+    Password:""       
+  }
+  const[form,setForm]=useState(FormFormat);
+  const dispatch=useDispatch();
+
+  function handleChange(e)
+  {
+      setForm({...form,[e.target.name]:e.target.value});
+  }
+
+  function handleSubmit(e)
+  {
+      e.preventDefault();
+    dispatch(signup(form,navigate));
+  }
 
   return(<div className="backg_sign">
      <div className="box-sign">
@@ -30,17 +52,19 @@ function Signup(props)
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Create Account</div> 
                 <div style={{textAlign:"center"}}>
-                <input className="input_style1" type="text" name="firstname" placeholder="First Name"/>
-                <input className="input_style1" type="text" name="lastname" placeholder="Last Name"/>
-                <input className="input_style2" type="text" name="emailid" placeholder="Email id"/><br/>
-                <input className="input_style2" handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
+                <input className="input_style1" onChange={handleChange} type="text" name="firstname" placeholder="First Name"/>
+                <input className="input_style1" onChange={handleChange} type="text" name="lastname" placeholder="Last Name"/>
+                <input className="input_style2" onChange={handleChange} type="text" name="emailid" placeholder="Email id"/><br/>
+                <input className="input_style2" onChange={handleChange} tandleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
                 <InputAdornment className="eye">
                 <IconButton onClick={handleShowPassword} >
                   {showPassword===true ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
                 </InputAdornment>
                 </div>
-                <button size="md" className="sign_but2" >SIGN UP
+                <button size="md" className="sign_but2" 
+                onClick={handleSubmit}
+                >SIGN UP
                     {/* <Link to="#">Log-In</Link> */}
                 </button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>

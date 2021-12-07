@@ -3,9 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import { useState,useEffect } from "react";
 import Col from "react-bootstrap/Col";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import "./login_style.css";
 import {InputAdornment,IconButton } from "@material-ui/core";
+import { signin } from "../Actions/user";
 import { Visibility } from "@material-ui/icons";
 import { VisibilityOff } from "@material-ui/icons";
 import GoogleIcon from '@mui/icons-material/Google';
@@ -21,7 +23,25 @@ function Login(props)
           setWidth(window.innerWidth);
       }
         window.addEventListener('resize', handleResize);
-      })
+      });
+      
+      const navigate=useNavigate();
+      const dispatch=useDispatch();
+      const FormFormat={
+        emailid:"",
+        password:""       
+      }
+      const[form,setForm]=useState(FormFormat);
+    
+      function handleChange(e)  
+      {
+        setForm({...form,[e.target.name]:e.target.value});
+      }
+    
+      function handleSubmit(e)
+      {
+        dispatch(signin(form,navigate));
+      }  
   return(<div className="backg_sign">
      <div className="box-sign">
        {(winWidth>575)&&
@@ -29,8 +49,8 @@ function Login(props)
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Login to Senior Circle</div> 
                 <div className="form_style">
-                <input className="input_style2" required type="text" name="emailid" placeholder="Email id"/><br/>
-                <input className="input_style2" required handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
+                <input className="input_style2" onChange={handleChange} required type="text" name="emailid" placeholder="Email id"/><br/>
+                <input className="input_style2" onChange={handleChange} required handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
                 <InputAdornment className="eye">
                 <IconButton onClick={handleShowPassword} >
                   {showPassword===true ? <Visibility /> : <VisibilityOff />}
@@ -40,7 +60,9 @@ function Login(props)
                 <div className="forgotpass">
                     Forgot password?
                 </div>
-                <button size="md" className="sign_but3">LOG IN
+                <button size="md" className="sign_but3" 
+                onClick={handleSubmit}
+                >LOG IN
                     {/* <Link to="#">Log-In</Link> */}
                 </button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
@@ -72,8 +94,8 @@ function Login(props)
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Login to Senior Circle</div> 
                 <div className="form_style">
-                <input className="input_style2" required type="text" name="emailid" placeholder="Email id"/><br/>
-                <input className="input_style2" required handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
+                <input className="input_style2" onChange={handleChange} required type="text" name="emailid" placeholder="Email id"/><br/>
+                <input className="input_style2" onChange={handleChange} required handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
                 <InputAdornment className="eye">
                 <IconButton onClick={handleShowPassword} >
                   {showPassword===true ? <Visibility /> : <VisibilityOff />}
@@ -83,7 +105,9 @@ function Login(props)
                 <div className="forgotpass">
                     Forgot password?
                 </div>
-                <button size="md" className="sign_but3">LOG IN
+                <button size="md" className="sign_but3" 
+                onClick={handleSubmit}
+                >LOG IN
                     {/* <Link to="#">Log-In</Link> */}
                 </button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>

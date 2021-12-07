@@ -28,13 +28,55 @@ margin-top: 3%;
 .backg_sign
 {
     display: flex;
+    position: relative;
     justify-content: space-around;
+    z-index: 1;
 }
 .sign_detail{
     background-color:#0B0D17;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     height: 500px;
+}
+.circle1{
+  border: #0B0D17 solid 58px; 
+  border-radius: 1000px;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  z-index: 0;
+  margin-left: 70px;
+  margin-top: 70px;
+}
+.outercircle1{
+  border: #0B0D17 solid 5px; 
+  border-radius: 1000px;
+  position: fixed;
+  height: 450px;
+  width: 450px;
+  margin-left: 980px;
+  margin-top: -135px;
+  z-index: 0;
+}
+.circle2{
+  border: #0B0D17 solid 58px; 
+  border-radius: 1000px;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  z-index: 0;
+  margin-left: 70px;
+  margin-top: 70px;
+}
+.outercircle2{
+  border: #0B0D17 solid 5px; 
+  border-radius: 1000px;
+  position: fixed;
+  height: 450px;
+  width: 450px;
+  margin-top: 300px;
+  margin-left: -105px;
+  z-index: 0;
 }
 .sign2_detail{
     background-color:#0B0D17;

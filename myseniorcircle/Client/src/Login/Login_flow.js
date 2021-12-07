@@ -3,7 +3,6 @@ import Login from "./login";
 import Signup from "./signup";
 import { useState,useEffect } from "react";
 import "./login_style.css";
-import { CSSTransition } from "react-transition-group";
 function Login_flow(props)
 {
     const [isSignup, setSignUp] = useState(props.val);  
@@ -17,25 +16,16 @@ function Login_flow(props)
       window.addEventListener('resize', handleResize);
     })
  return(
-    //  e8f1fc
-     <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}}>
-    {/* <CSSTransition
-    in={isSignup}
-    timeout={1000}
-    className="alert"
-    unmountOnExit
-    > */}
-    {isSignup&&<Signup formtype={setSignUp}/>}
-    {/* </CSSTransition> */}
-    {/* <CSSTransition
-    in={!isSignup}
-    timeout={1000}
-    className="alert"
-    unmountOnExit
-    > */}
-    {!isSignup&&<Login formtype={setSignUp}/>}
-    {/* </CSSTransition> */}
-    </div>
+   <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}}>
+     <div className="outercircle1">
+     <div className="circle1"></div>
+     </div>
+      {isSignup&&<Signup formtype={setSignUp}/>}
+      {!isSignup&&<Login formtype={setSignUp}/>}
+     <div className="outercircle2">
+     <div className="circle2"></div>
+     </div>
+   </div>
  );
 }
 export default Login_flow;
