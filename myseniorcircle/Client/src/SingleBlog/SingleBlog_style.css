@@ -89,6 +89,7 @@
     margin-right: 100px;
     color: #0B0D17;
     padding-bottom: 20px;
+    white-space: pre-line;
 }
 .writerName{
     font-family: 'Roboto Slab', serif;

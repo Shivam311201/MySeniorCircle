@@ -18,7 +18,6 @@ export const signin = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
   } catch (error) {
-    console.log(error);
     return res.status(500).json("Something went wrong!");
   }
 };

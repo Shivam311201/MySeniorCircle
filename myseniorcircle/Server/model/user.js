@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const PostSchema=mongoose.Schema({
+const BlogSchema=mongoose.Schema({
     title:{type:String},
     content:{type:String},
     posted:{type:Date},
@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema({
  collegeName:{type:String},
  Experience:{type:String},
  Company:{type:String},
- posts:[PostSchema]   
 });
 const User =mongoose.model("User",userSchema);
-export {User};
+const Blog=mongoose.model("Post",BlogSchema);
+export {User,Blog};

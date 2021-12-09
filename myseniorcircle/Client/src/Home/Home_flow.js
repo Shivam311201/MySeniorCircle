@@ -13,7 +13,7 @@ export default function Home_flow()
     <Navbar/>
     <Landing/>
     <div className="trends">What's Trending <FontAwesomeIcon icon={faPoll}/></div>
-    <My_carousel/>
+    <My_carousel/>  
     <Feature1/>
     <Feature2/>
     <Footer/>
