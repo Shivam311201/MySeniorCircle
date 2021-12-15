@@ -12,9 +12,9 @@ function WriteBlog()
         title:"",
         content:"",
         posted:new Date().toDateString(),
-        user:user.data.result._id,
+        user:user.data.user._id,
         like:0,
-        Dislike:0
+        dislike:0
     }
     const [form,setform]=useState(formFormat);
     

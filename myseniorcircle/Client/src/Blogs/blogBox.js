@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BlogImage from "../images/BlogImage.jpg";
 function BlogBox(props)
 {
-    const content=props.item.content.substr(0,200);
+    const content=props.item?.content?.substr(0,200);
     const path="/blogs/"+props.item._id;
     return (<div>
     <div className="Blog_title">{props.item.title}</div>

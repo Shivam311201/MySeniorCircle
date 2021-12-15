@@ -12,13 +12,7 @@ function SearchBar(props)
     {
         window.scrollTo(0,0);
     }
-    function print(item)
-    {
-        console.log(item);
-        console.log("hi");
-    }
     const {posts}=useSelector((state)=>state.posts);
-    const allBlogs=(posts.data);
     return (<div>
        <Row className="m-0 p-0">
            <Col className="m-0 p-0" lg={4} md={4} sm={0} xs={0}>
@@ -41,7 +35,7 @@ function SearchBar(props)
             <Row className="m-0 p-0">
                 <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>
                     <div className="blog_outerArea">
-                        {allBlogs?.map((item)=>(
+                        {posts?.map((item)=>(
                             <BlogBox key={item._id} item={item}/>
                         ))}
                     </div>

@@ -15,7 +15,7 @@ function UserOpt(props)
        <Row className="m-0 p-0">
            <Col className="m-0 p-0" lg={4} md={4} sm={0} xs={0} style={{backgroundColor:"#0B0D17"}}>
                <div className="user_sidebar">
-                   <div className="usersidebar_title">{user.data.result.firstname} {user.data.result.lastname}</div>
+                   <div className="usersidebar_title">{user?.data?.user?.firstname} {user?.data?.user?.lastname}</div>
                    <img src={Profile} className="usersidebar_img"/>
                    <button className="edit_button">Edit</button>
                    <div className="usersidebar_opt">

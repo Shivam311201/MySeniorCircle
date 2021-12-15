@@ -5,13 +5,13 @@ const BlogSchema=mongoose.Schema({
     posted:{type:Date},
     user:{type:String},
     like:{type:Number},
-    Dislike:{type:Number}
+    dislike:{type:Number}
 });
 
 const userSchema = mongoose.Schema({
  firstname:{type:String},
  lastname:{type:String},
- emailid:{type:String},
+ emailid:{type:String}, 
  password:{type:String},
  photo:
  {

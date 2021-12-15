@@ -13,7 +13,8 @@ function App() {
   const dispatch=useDispatch();
   useEffect(()=>{
     dispatch(fetchblogs());
-  },[]);
+  },[dispatch]);
+
   return (
     <Router>
     <Routes>

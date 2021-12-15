@@ -16,7 +16,7 @@ const CONNECTION_URL="mongodb+srv://Shivam:Shvam123@cluster0.dlwd2.mongodb.net/m
 const PORT=4000;
 
 app.use("/",authRoutes);
-// app.use("/",postRoutes);
+app.use("/",postRoutes);
 app.use("/users/profile",userRoutes);
 
 mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true})
