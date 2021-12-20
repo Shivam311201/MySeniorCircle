@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SearchBar from "./searchBar";
-import { Transition } from "react-transition-group";
 import "./blog_style.css";
 function Blog_flow()
 {
@@ -31,7 +30,7 @@ function Blog_flow()
     };
 
     return (<div>
-         <Navbar Nav={Nav} FixedVal={FixedVal}/>
+         <Navbar FixedVal={FixedVal}/>
          <SearchBar Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>
          <Footer/>
     </div>);

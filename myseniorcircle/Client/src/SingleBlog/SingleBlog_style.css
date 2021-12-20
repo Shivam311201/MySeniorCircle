@@ -36,11 +36,11 @@
     animation-duration: 1s;
     animation-delay: 0.5s;
 }
-.dislike_but{
-    align-items: center;
+.cmnt_but{
     margin-bottom: 80px;
+    align-items: center;
 }
-.dislike_icon:hover{
+.cmnt_icon:hover{
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
     cursor: pointer;
     animation-duration: 1s;
@@ -57,29 +57,33 @@
     margin-left: 40px;
     margin-top: -200px;
 }
+.like_icon{
+    margin-bottom: 10px;
+}
 .like_cnt{
     font-family: 'Roboto Slab', serif;
     font-size: 15px; 
     font-weight: 600;
-    color: #ff6347;   
-    margin-left: 35px;
-    margin-top: -15px;
+    color: #181D31;   
+    margin-top: -10px;
     margin-bottom: -5px;
 }
-.dislike_cnt{
-    font-family: 'Roboto Slab', serif;
-    font-size: 15px; 
-    font-weight: 600;
-    color: #3cb371;   
-    margin-left: 35px;
-    margin-top: -23px;
-}
-.but_title{
-    margin-left: -7px;
+.cmnt_cnt{
     font-family: 'Roboto Slab', serif;
     font-size: 15px; 
     font-weight: 600;
     color: #181D31;   
+    margin-left: -20px;
+    margin-top: -3px;
+    margin-bottom: -5px;
+}
+.but_delete{
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px; 
+    font-weight: 600;
+    color: #181D31;   
+    margin-left: -5px;
+    margin-bottom: -5px;
 }
 .singleblog_content{
     font-family: 'Roboto Slab', serif;
@@ -95,7 +99,7 @@
     font-family: 'Roboto Slab', serif;
     font-size: 27px; 
     font-weight: 600;
-    margin-left: 160px;
+    margin-left: 50px;
     margin-right: 100px;
     color: #0B0D17;
     padding-top: 10px;
@@ -105,7 +109,7 @@
     font-family: 'Roboto Slab', serif;
     font-size: 17px; 
     font-weight: 500;
-    margin-left: 160px;
+    margin-left: 50px;
     margin-right: 100px;
     color: #0B0D17;
     padding-bottom: 20px;
@@ -125,4 +129,11 @@
   margin-top: -5px;
   margin-left: 140px;
   border:1px solid gray;
+}
+.userPhoto{
+    height:70px;
+    width: 70px;
+    border-radius: 100px;
+    margin-top: 13px;
+    margin-left: 160px;
 }

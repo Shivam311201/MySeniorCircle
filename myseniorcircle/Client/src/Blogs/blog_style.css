@@ -8,27 +8,19 @@
     width: 100%;
     position:fixed;
     opacity: 1;
-    transition: all 0.3s;
 }
 .nav_row2{
     position:fixed;
     opacity: 0;
     transform: translateY(-67px);
 }
-.Search_bar1{
+.Search_bar{
     display: flex;
     flex-direction: row-reverse;
     background-color: #0B0D17;
     height: 60px;
     position: sticky;
     top: 57px;
-    opacity: 1;
-    transform: none;
-    transition: all 0.3s;
-}
-.Search_bar2{
-    opacity: 0;
-    transform: translateY(-57px);
 }
 .blog_sidebar1{
     background-color: #0B0D17;
@@ -37,6 +29,8 @@
     padding-top: 10px;
     padding-bottom: 5px;
     position: fixed;
+    top:0px;
+    transform: translateY(57px);
 }
 .blog_sidebar{
     background-color: #0B0D17;

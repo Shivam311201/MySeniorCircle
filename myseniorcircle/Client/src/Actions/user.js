@@ -1,4 +1,4 @@
-import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, DISLIKE_POST} from "../constants/actionTypes";
+import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER} from "../constants/actionTypes";
 import * as api from "../api/index";
 export const signin=(form,navigator)=> async (dispatch)=>
 {
@@ -26,6 +26,24 @@ export const signup=(form,navigator)=> async (dispatch)=>
         console.log(error);
     }
 };
+export const updateuser=(form)=> async(dispatch)=>
+{
+    try {
+        const data=await api.UpdateUser(form);
+        dispatch({type:AUTH,data});
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const getuser=(id)=> async(dispatch)=>
+{
+    try {
+        const user=await api.GetUser(id);
+        dispatch({type:GET_USER,payload:user.data});
+    } catch (error) {
+        console.log(error);
+    }
+}
 export const addblog=(form,navigator)=> async (dispatch)=>
 {
     try {
@@ -69,15 +87,6 @@ export const likepost=(id)=> async(dispatch)=>
     try {
         const post=await api.LikePost(id);
         dispatch({type:LIKE_POST,payload:post.data});
-    } catch (error) {
-       console.log(error); 
-    }
-}
-export const dislikepost=(id)=> async(dispatch)=>
-{
-    try {
-        const post=await api.DislikePost(id);
-        dispatch({type:DISLIKE_POST,payload:post.data});
     } catch (error) {
        console.log(error); 
     }

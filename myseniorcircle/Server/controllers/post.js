@@ -1,4 +1,5 @@
-import { User,Blog } from "../model/user.js";
+import { Blog } from "../model/user.js";
+import mongoose from 'mongoose';
 
 export const addBlog= async(req,res)=>{
 
@@ -44,17 +45,20 @@ export const deleteCustomBlog=async(req,res)=>{
 export const LikeCustomBlog=async(req,res)=>{
     const {id}=req.params;
     
-    const post=await Blog.findById(id);
-    const updatedPost = await Blog.findByIdAndUpdate(id, { like: post.like + 1 }, { new: true });
-
-    res.json(updatedPost);
-}
-
-export const DislikeCustomBlog=async(req,res)=>{
-    const {id}=req.params;
+    if (!req.userId) {
+        return res.json({ message: "Unauthenticated" });
+      }
     
-    const post=await Blog.findById(id);
-    const updatedPost = await Blog.findByIdAndUpdate(id, { dislike: post.dislike + 1 }, { new: true });
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+      
+    const blog = await Blog.findById(id);
+    const index = blog.like.findIndex((id) => id ===String(req.userId));
+    if (index === -1) {
+      blog.like.push(req.userId);
+    } else {
+      blog.like = blog.like.filter((id) => id !== String(req.userId));
+    }
 
-    res.json(updatedPost);
+    const updatedBlog = await Blog.findByIdAndUpdate(id, blog, { new: true });
+    res.status(200).json(updatedBlog);
 }

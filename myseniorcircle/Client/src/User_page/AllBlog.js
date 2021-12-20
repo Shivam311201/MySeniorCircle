@@ -12,7 +12,7 @@ function AllBlog(props)
     }
     
     const val=JSON.parse(window.localStorage.getItem("profile"));
-    const curUser=val?.data.user._id;
+    const curUser=val?.data.result._id;
     const {posts}=useSelector((state)=>state.posts);
 
     return(<Row className="m-0 p-0">

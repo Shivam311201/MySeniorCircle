@@ -2,22 +2,19 @@ import mongoose from "mongoose";
 const BlogSchema=mongoose.Schema({
     title:{type:String},
     content:{type:String},
-    posted:{type:Date},
+    posted:{type:String},
     user:{type:String},
-    like:{type:Number},
-    dislike:{type:Number}
+    tags:{type:[String]},
+    like:{type:[String],default:[]},
+    comments:{type:[String],default:[]}
 });
 
 const userSchema = mongoose.Schema({
- firstname:{type:String},
- lastname:{type:String},
- emailid:{type:String}, 
- password:{type:String},
- photo:
- {
-    data:Buffer,
-    contentType:String
- },
+ firstname:{type:String,required:true},
+ lastname:{type:String,required:true},
+ emailid:{type:String,required:true}, 
+ password:{type:String,required:true},
+ photo:String,
  collegeName:{type:String},
  Experience:{type:String},
  Company:{type:String},
