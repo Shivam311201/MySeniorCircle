@@ -1,4 +1,4 @@
-import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER} from "../constants/actionTypes";
+import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST} from "../constants/actionTypes";
 import * as api from "../api/index";
 export const signin=(form,navigator)=> async (dispatch)=>
 {
@@ -39,7 +39,7 @@ export const getuser=(id)=> async(dispatch)=>
 {
     try {
         const user=await api.GetUser(id);
-        dispatch({type:GET_USER,payload:user.data});
+        await dispatch({type:GET_USER,payload:user.data});
     } catch (error) {
         console.log(error);
     }
@@ -67,7 +67,7 @@ export const fetchblogbyid=(id)=> async(dispatch) =>
 {
     try {
         const blog=await api.fetchBlogById(id);
-        dispatch({type:FETCHSINGLE_POST,payload:blog.data});
+        await dispatch({type:FETCHSINGLE_POST,payload:blog.data});
     } catch (error) {
         console.log(error);
     }
@@ -87,6 +87,15 @@ export const likepost=(id)=> async(dispatch)=>
     try {
         const post=await api.LikePost(id);
         dispatch({type:LIKE_POST,payload:post.data});
+    } catch (error) {
+       console.log(error); 
+    }
+}
+export const commentpost=(id,form)=> async(dispatch)=>
+{
+    try {
+        const post=await api.CommentPost(id,form);
+        dispatch({type:COMMENT_POST,payload:post.data});
     } catch (error) {
        console.log(error); 
     }

@@ -1,4 +1,4 @@
-import { FETCHUSER_POSTS,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER, } from "../constants/actionTypes";
+import { FETCHUSER_POSTS,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST, } from "../constants/actionTypes";
 export default (state={posts:[],post:{},user:{}},action)=>
 {
     switch(action.type)
@@ -13,6 +13,8 @@ export default (state={posts:[],post:{},user:{}},action)=>
             return {...state, posts:state.posts.filter((item)=>item._id!==action.payload)};
         case LIKE_POST:
             return { ...state, posts:state.posts?.map((item) => (item._id === action.payload._id ? action.payload : item))};
+        case COMMENT_POST:
+            return { ...state, posts:state.posts?.map((item) => (item._id === action.payload._id ? action.payload : item))};    
         case GET_USER:
             return {...state,user:action.payload};
         default:

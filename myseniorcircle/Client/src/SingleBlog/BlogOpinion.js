@@ -60,7 +60,7 @@ function BlogOpinion(props)
       </div>
       </div>
       <div className="cmnt_but">
-      <FontAwesomeIcon className="cmnt_icon" size="2x" icon={faComment}/>
+      <FontAwesomeIcon className="cmnt_icon" size="2x" icon={faComment} onClick={()=>window.scrollTo({ behavior: 'smooth', top: props.myRef.current.offsetTop })}/>
       &nbsp;<div className="cmnt_cnt">
       Comments
       </div>

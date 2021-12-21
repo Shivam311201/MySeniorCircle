@@ -62,3 +62,18 @@ export const LikeCustomBlog=async(req,res)=>{
     const updatedBlog = await Blog.findByIdAndUpdate(id, blog, { new: true });
     res.status(200).json(updatedBlog);
 }
+export const CommentCustomBlog=async(req,res)=>{
+    const {username,data}=req.body;
+    const {id}=req.params;
+
+    if (!req.userId) {
+        return res.json({ message: "Unauthenticated" });
+      }
+    
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    
+    const blog = await Blog.findById(id);
+    blog.comments.push({username,data});  
+    const updatedBlog = await Blog.findByIdAndUpdate(id, blog, { new: true });
+    res.status(200).json(updatedBlog);
+}

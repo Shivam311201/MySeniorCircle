@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import { useNavigate } from "react-router";
 import { addblog } from "../Actions/user";
+import FileBase from "react-file-base64";
+
 function WriteBlog()
 {
     const user=JSON.parse(localStorage.getItem("profile"));
@@ -12,6 +14,7 @@ function WriteBlog()
         content:"",
         posted:new Date().toDateString(),
         user:user.data.result._id,
+        blogphoto:"",
         like:[],
         comments:[],
         tags:[]
@@ -34,8 +37,11 @@ function WriteBlog()
         <br/>
         <textarea required name="content" onChange={updateForm} className="writeContent" type="text" placeholder="Decription"/>
         <br/>
+        <div className="fileinput1"><FileBase type="file" multiple={false} onDone={({base64})=>setform({...form,blogphoto:base64})}/></div>
+        <div className="blogbuttonGroup">
         <button className="button_cancel" onClick={()=>navigate("/")}>Cancel</button>
         <button className="button_post" onClick={postBlog}>Post</button>
+        </div>
     </div>);
 }
 export default WriteBlog;

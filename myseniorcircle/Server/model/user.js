@@ -1,12 +1,17 @@
 import mongoose from "mongoose";
+const commentSchema=mongoose.Schema({
+    username:{type:String},
+    data:{type:String}
+});
 const BlogSchema=mongoose.Schema({
-    title:{type:String},
-    content:{type:String},
-    posted:{type:String},
-    user:{type:String},
+    title:{type:String,required:true},
+    content:{type:String,required:true},
+    posted:{type:String,required:true},
+    user:{type:String,required:true},
+    blogphoto:{type:String},
     tags:{type:[String]},
     like:{type:[String],default:[]},
-    comments:{type:[String],default:[]}
+    comments:{type:[commentSchema],default:[]}
 });
 
 const userSchema = mongoose.Schema({
@@ -17,7 +22,6 @@ const userSchema = mongoose.Schema({
  photo:String,
  collegeName:{type:String},
  Experience:{type:String},
- Company:{type:String},
 });
 const User =mongoose.model("User",userSchema);
 const Blog=mongoose.model("Post",BlogSchema);

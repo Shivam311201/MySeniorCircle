@@ -5,6 +5,7 @@
     margin-left: 100px;
     padding-top: 50px;
     color: #181D31;    
+    text-transform: capitalize;
 }
 .singleblog_date{
     font-family: 'Roboto Slab', serif;
@@ -104,6 +105,7 @@
     color: #0B0D17;
     padding-top: 10px;
     padding-bottom: 5px;
+    text-transform: capitalize;
 }
 .writerPos{
     font-family: 'Roboto Slab', serif;
@@ -130,10 +132,51 @@
   margin-left: 140px;
   border:1px solid gray;
 }
+.end_line3{
+    height:0px;
+    width:1050px;
+    background-color: grey;
+    margin-top: 5px;
+    margin-left: 140px;
+    border:1px solid gray;
+  }
 .userPhoto{
     height:70px;
     width: 70px;
     border-radius: 100px;
     margin-top: 13px;
     margin-left: 160px;
+}
+.cmnt_title{
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px; 
+    font-weight: 600;
+    margin-left: 140px;
+    padding-top: 5px;
+    color: #181D31;       
+}
+.commentInput{
+    margin-left: 150px;
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    height: 40px;
+    padding-left: 15px;
+    border: #0B0D17 solid 0.5px;
+}
+.send_button{
+    margin-left: -40px;
+}
+.send_button:hover{
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+    animation-duration: 1s;
+    animation-delay: 0.5s;    
+}
+.cmntdata{
+    margin-left: 160px;
+}
+.usercomment{
+    text-transform: capitalize;
 }

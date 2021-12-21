@@ -17,3 +17,4 @@ export const DeletePost=(id)=>API.delete(`/blogs/${id}`);
 export const LikePost=(id)=>API.patch(`/blogs/like/${id}`);
 export const UpdateUser=(form)=>API.patch(`/user/updateDetails`,form);
 export const GetUser=(id)=>API.get(`/user/getDetails/${id}`);
+export const CommentPost=(id,form)=>API.patch(`/blogs/comment/${id}`,form);

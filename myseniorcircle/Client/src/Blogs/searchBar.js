@@ -31,7 +31,7 @@ function SearchBar(props)
            <Col className="m-0 p-0" lg={8} md={8} sm={12} xs={12}>
                 {props.FixedVal&&<div className="Search_bar">
                    <FontAwesomeIcon className="searchIcon" icon={faSearch} />
-                   <input type="text" className="searchInput" placeholder="Search by title.."></input>
+                   <input type="text" className="searchInput" placeholder="Search by tags..."></input>
                </div>}
             <Row className="m-0 p-0">
                 <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>

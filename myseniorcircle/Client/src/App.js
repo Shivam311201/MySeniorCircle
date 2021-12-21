@@ -14,7 +14,7 @@ function App() {
   useEffect(()=>{
     dispatch(fetchblogs());
   },[dispatch]);
-
+ 
   return (
     <Router>
     <Routes>
@@ -23,7 +23,7 @@ function App() {
     <Route exact path="/login" element={<Login_flow val={false}/>}/>
     <Route exact path="/about" element={<About_flow/>}/>
     <Route exact path="/blogs" element={<Blog_flow/>}/>
-    <Route exact path="/blogs/:id" element={<SingleBlog_flow/>}/>
+    <Route exact path="/blogs/userid/:user/blogid/:blog" element={<SingleBlog_flow/>}/>
     <Route exact path="/profile/2" element={<User_flow/>}/>
     </Routes>
     </Router>);
