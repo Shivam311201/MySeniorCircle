@@ -18,7 +18,7 @@ function Login_flow(props)
  return(
    <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}}>
      <div className="outercircle1">
-     <div className="circle1"></div>
+     <div className="circle1"></div>  
      </div>
       {isSignup&&<Signup formtype={setSignUp}/>}
       {!isSignup&&<Login formtype={setSignUp}/>}

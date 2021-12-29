@@ -117,12 +117,19 @@
     font-weight: 400;
     color: #181D31;
 }
-
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+.Trends{
+    height: 480px;
+    width: 900px;
+    margin-left: 180px;
+}
+.CaraouselOuter{
+    margin-bottom: 20px;
 }
 @-webkit-keyframes fadeIn{
     0%{

@@ -11,7 +11,7 @@ function About_developer()
           <br />
           <br />
           <br />
-          <div class="container">
+          <div className="container">
             Hola!!, myself Shivam Garg, a 2nd year CS student at DTU. Currently,
             I am exploring the field of web development and trying to have a
             hand-on-experience over MERN stack through some projects. I am also

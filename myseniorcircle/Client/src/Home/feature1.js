@@ -17,7 +17,7 @@ function Feature1()
         <button className="blogs_but">Blogs</button>
         </Link>
         </Col>
-        <Col xs={12} sm={12} md={6} lg={5} className="m-0 p-0" style={{display:"flex",flexDirection:"row-reverse"}}><img clasName="fea1_img" src={Feature1Img}/></Col>
+        <Col xs={12} sm={12} md={6} lg={5} className="m-0 p-0" style={{display:"flex",flexDirection:"row-reverse"}}><img className="fea1_img" src={Feature1Img}/></Col>
     </Row>
    </div>); 
 }
