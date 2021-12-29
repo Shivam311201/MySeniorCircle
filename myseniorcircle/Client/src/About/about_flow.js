@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 import About_company from "./company";
 import About_developer from "./developer";
 function About_flow()

@@ -1,4 +1,4 @@
-import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST} from "../constants/actionTypes";
+import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST,FETCH_BY_SEARCH, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST, START_LOADING,END_LOADING} from "../constants/actionTypes";
 import * as api from "../api/index";
 export const signin=(form,navigator)=> async (dispatch)=>
 {
@@ -57,8 +57,10 @@ export const addblog=(form,navigator)=> async (dispatch)=>
 export const fetchblogs=()=> async (dispatch) =>
 {
     try {
+        dispatch({type:START_LOADING});
         const blogs=await api.fetchBlogs();
         dispatch({type:FETCH_ALL,payload:blogs.data});
+        dispatch({type:END_LOADING});
     } catch (error) {
         console.log(error);
     }
@@ -68,6 +70,17 @@ export const fetchblogbyid=(id)=> async(dispatch) =>
     try {
         const blog=await api.fetchBlogById(id);
         await dispatch({type:FETCHSINGLE_POST,payload:blog.data});
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const fetchbysearch=(query)=>async(dispatch) =>
+{
+    try {
+        dispatch({type:START_LOADING});
+        const blog=await api.fetchBlogBySearch(query);
+        dispatch({type:FETCH_BY_SEARCH,payload:blog.data});
+        dispatch({type:END_LOADING});
     } catch (error) {
         console.log(error);
     }

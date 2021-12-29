@@ -1,7 +1,7 @@
 import React from "react";
 import Blog from "./blog";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchblogbyid, getuser } from "../Actions/user";

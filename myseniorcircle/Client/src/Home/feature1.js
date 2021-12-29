@@ -2,6 +2,7 @@ import React from "react";
 import { Row,Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Feature1Img from "../images/Feature1.png";
+import "./Home_style.css";
 function Feature1()
 {
    return (<div style={{backgroundColor:"#ddeeff",height:"420px",alignItems:"center"}}>

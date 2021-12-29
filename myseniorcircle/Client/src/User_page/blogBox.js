@@ -18,7 +18,7 @@ function BlogBox(props)
     return (<div>
     <div className="Blog_title">{props.item.title}</div>
     <div className="blog_box">
-       <img src={BlogImage} className="blogimg_style"/>
+       <img src={props.item.blogphoto} className="blogimg_style"/>
        <div className="Blog_content">{content}... <div className="readMore" onClick={()=>RedirectToBlog()}>Read More</div> </div> 
     </div>
     </div>);

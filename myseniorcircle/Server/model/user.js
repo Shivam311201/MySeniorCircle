@@ -9,7 +9,6 @@ const BlogSchema=mongoose.Schema({
     posted:{type:String,required:true},
     user:{type:String,required:true},
     blogphoto:{type:String},
-    tags:{type:[String]},
     like:{type:[String],default:[]},
     comments:{type:[commentSchema],default:[]}
 });
@@ -19,7 +18,7 @@ const userSchema = mongoose.Schema({
  lastname:{type:String,required:true},
  emailid:{type:String,required:true}, 
  password:{type:String,required:true},
- photo:String,
+ photo:{type:String},
  collegeName:{type:String},
  Experience:{type:String},
 });

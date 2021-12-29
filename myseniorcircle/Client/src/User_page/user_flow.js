@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import UserOpt from "./userOpt";
 function User_flow()
 {

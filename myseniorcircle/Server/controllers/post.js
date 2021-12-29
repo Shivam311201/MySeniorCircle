@@ -77,3 +77,13 @@ export const CommentCustomBlog=async(req,res)=>{
     const updatedBlog = await Blog.findByIdAndUpdate(id, blog, { new: true });
     res.status(200).json(updatedBlog);
 }
+export const fetchBySearch=async(req,res)=>{
+    const {searchQuery}=req.query;
+    try {
+        const title = new RegExp(searchQuery, "i");
+        const blogs = await Blog.find({ title });
+        res.json(blogs);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}

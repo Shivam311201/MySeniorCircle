@@ -1,14 +1,17 @@
 import React, {useState} from "react";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import SearchBar from "./searchBar";
+import Footer from "../Footer";
+import CustomNavbar from "./CustomNav";
+import AllBlogs from "./allBlogs";
+import { useSelector } from "react-redux";
 import "./blog_style.css";
+
 function Blog_flow()
 {
     var prevScrollpos = window.pageYOffset;
-    const[arrowVal,setArrow]=useState(false);
-    const[FixedVal,setFixed]=useState(true);
-    const[Nav,setNav]=useState(1);
+    const {isLoading,posts}=useSelector((state)=>state.posts);
+    const [arrowVal,setArrow]=useState(false);
+    const [FixedVal,setFixed]=useState(true);
+    const [Nav,setNav]=useState(1);
 
     window.onscroll=()=>{
         //For setting the arrow
@@ -24,15 +27,16 @@ function Blog_flow()
         //For setting navbar
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos)
-            setNav(1);   
-         else setNav(2);
+        setNav(1);   
+        else setNav(2);
         prevScrollpos = currentScrollPos;
     };
 
+    console.log(FixedVal);
     return (<div>
-         <Navbar FixedVal={FixedVal}/>
-         <SearchBar Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>
-         <Footer/>
+         <CustomNavbar FixedVal={FixedVal}/>
+         <AllBlogs Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>
+         {!isLoading&&posts.length!==0&&<Footer/>}
     </div>);
 }
 export default Blog_flow;

@@ -9,6 +9,8 @@ import {
   Facebook,
   Instagram,
 } from "@material-ui/icons";
+import "./style.css";
+
 function Footer() {
     const[winWidth,setWidth]=useState(window.innerWidth);
     useEffect(() => {

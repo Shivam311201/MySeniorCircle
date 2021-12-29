@@ -20,7 +20,8 @@
     background-color: #0B0D17;
     height: 60px;
     position: sticky;
-    top: 57px;
+    margin-left: -10px;
+    top: 56.9px;
 }
 .blog_sidebar1{
     background-color: #0B0D17;
@@ -119,13 +120,16 @@
     margin-right: -30px;
     border-radius: 5px;
     border-color: #0B0D17;    
+    background-color: #fff;
     padding-left: 15px;
+    padding-right: 35px;
     align-self: center;
 }
 .searchIcon{
     margin-right: 65px;
     margin-top: 21px;
     z-index: 1;
+    color: grey;
 }
 .blog_outerArea{
     margin-left: 80px;   
@@ -155,8 +159,20 @@
     cursor: pointer;
 }
 .searchIcon:hover{
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+    color: #0B0D17;
     cursor: pointer;
-    animation-duration: 1s;
-    animation-delay: 0.5s;    
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+}
+.load{
+    margin-top: 300px;
+    text-align: center;
+}
+.NoFound{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px; 
+    font-weight: 500;
+    margin-top: 170px;
 }

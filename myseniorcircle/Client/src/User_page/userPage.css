@@ -11,18 +11,18 @@
     margin-bottom: 20px;  
 }
 .user_options{
-  font-family: 'Roboto Slab', serif;
-  font-size: 20px; 
-  font-weight: 400;    
-  color: #fff;
-  height: 40px;
-  align-items: center;
-  padding-top: 4px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px; 
+    font-weight: 400;    
+    color: #fff;
+    height: 40px;
+    align-items: center;
+    padding-top: 4px;
 }
 .user_options:hover{
-  color: #ddeeff;
-  animation-delay: 1s;
-  animation-duration: 1s;  
+    color: #ddeeff;
+    animation-delay: 1s;
+    animation-duration: 1s;  
 }
 .usersidebar_title{
     font-family: 'Roboto Slab', serif;
@@ -37,6 +37,7 @@
 .usersidebar_img{
     height: 200px;
     width: 200px;
+    border-radius: 20px;
     text-align: center;
 }
 .usersidebar_content{
@@ -84,11 +85,11 @@
     margin-left: 300px;
 }
 .edit_button:hover{
-  background-color: #ddeeff;
-  transition-duration: 0.5s;
-  transition-property: inherit;
-  transition-delay: 0.1s;
-  cursor: pointer;
+    background-color: #ddeeff;
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+    cursor: pointer;
 }
 .detail_button{
     padding-left: 10px;
@@ -105,11 +106,11 @@
     color: #0B0D17;
 }
 .detail_button:hover{
-  background-color: #ddeeff;
-  transition-duration: 0.5s;
-  transition-property: inherit;
-  transition-delay: 0.1s;
-  cursor: pointer;
+    background-color: #ddeeff;
+    transition-duration: 0.5s;
+    transition-property: inherit;
+    transition-delay: 0.1s;
+    cursor: pointer;
 }
 .detail{
     margin-left: 200px;
@@ -131,36 +132,36 @@
     cursor: pointer;
 }
 .writeHead{
-  font-family: 'Roboto Slab', serif;
-  font-size: 40px; 
-  font-weight: 500;
-  color: #0B0D17;
-  padding-left: 110px;
-  padding-top: 12px;   
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px; 
+    font-weight: 500;
+    color: #0B0D17;
+    padding-left: 125px;
+    padding-top: 15px;   
 }
 .writeTitle{
- margin-left: 105px;
- width:630px;
- height: 38px;
- margin-top: 10px;
- border-radius: 3px;
- border: #0B0D17 solid 0.5px;
- padding-left: 10px;
+    margin-left: 120px;
+    width:600px;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: #0B0D17 solid 0.5px;
+    padding-left: 10px;
 }
 .writeDetails{
     margin-left: 10px;
     margin-right: 10px;
     width:72%;
-    height: 38px;
+    height: 45px;
     margin-top: 20px;
     border-radius: 3px;
     border: #0B0D17 solid 0.5px;
     padding-left: 10px;
    }
 .writeContent{
-    margin-left: 105px;
-    width:630px;
-    height: 280px;
+    margin-left: 120px;
+    width:600px;
+    height: 288px;
     margin-top: 10px;
     border-radius: 3px;
     border: #0B0D17 solid 0.5px;
@@ -171,7 +172,7 @@
     margin-left: 10px;
     margin-right: 10px;
     width:72%;
-    height: 50px;
+    height: 45px;
     margin-top: 10px;
     border-radius: 3px;
     border: #0B0D17 solid 0.5px;
@@ -179,18 +180,18 @@
     padding-top: 10px;
 }
 .button_cancel{
- margin-top: 5px;
- margin-bottom: 8px;
- margin-left: 570px;
- margin-right: 15px;
- height: 43px;
- width: 85px;
- border: #0B0D17;
- border-radius: 4px;
- font-family: 'Roboto Slab', serif;
- font-size: 17px;  
- color: #fff;
- background-color: #0B0D17;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-left: 545px;
+    margin-right: 15px;
+    height: 43px;
+    width: 85px;
+    border: #0B0D17;
+    border-radius: 4px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;  
+    color: #fff;
+    background-color: #0B0D17;
 }
 .button_cancel:hover{
     background-color: #142F43;
@@ -237,10 +238,10 @@
     color: #0B0D17;
     font-family: 'Roboto Slab', serif;
     font-size: 16px;  
-    margin-left: 320px;
+    margin-left: 130px;
     cursor: pointer;
     border-radius: 10px;
 }
 .blogbuttonGroup{
-    margin-top: -40px;
+    margin-top: -10px;
 }

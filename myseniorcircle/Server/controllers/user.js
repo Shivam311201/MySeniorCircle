@@ -70,6 +70,7 @@ export const updateUser=async(req,res)=>{
 
     const updatedUser = await User.findByIdAndUpdate(OldUser._id, OldUser, { new: true });
     res.status(201).json({result:updatedUser,token});
+    
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });   
   }

@@ -26,9 +26,8 @@ function Blog()
         setcomment(post.comments);
         setMycmnt(commentForm);
     },[user,post.comments]);
-    console.log(comment);
-    function handleChange(e)
-    {
+
+    function handleChange(e){
         setMycmnt({...mycmnt,[e.target.name]:e.target.value});
     }
     

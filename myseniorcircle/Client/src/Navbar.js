@@ -1,7 +1,8 @@
 import React from "react";
-import Logo from "../images/logo.png"
+import Logo from "./images/logo.png"
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 function Navbar()
 {
   const user=JSON.parse(window.localStorage.getItem("profile"));

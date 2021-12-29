@@ -49,7 +49,7 @@ function BlogOpinion(props)
   }
 
   return (<div style={{display:"flex"}}>
-  <img className="singleblog_img" src={BlogImage}/>
+  <img className="singleblog_img" src={post.blogphoto}/>
   <div className="button_grp">
       
       <div className="like_but">
