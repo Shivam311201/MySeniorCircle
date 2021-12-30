@@ -127,6 +127,7 @@
     height: 480px;
     width: 900px;
     margin-left: 180px;
+    cursor: pointer;
 }
 .CaraouselOuter{
     margin-bottom: 20px;

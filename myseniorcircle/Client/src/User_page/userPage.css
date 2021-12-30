@@ -245,3 +245,14 @@
 .blogbuttonGroup{
     margin-top: -10px;
 }
+.loadProfile{
+    margin-top: 230px;
+    text-align: center;
+}
+.NoFound1{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px; 
+    font-weight: 500;
+    margin-top: 190px;
+}

@@ -59,7 +59,7 @@ function AllBlogs(props)
                 </Col>
                 <Col className="m-0 p-0 uparrow" lg={2} md={2} sm={2} xs={2}>{props.arrowVal&&<FontAwesomeIcon icon={faArrowAltCircleUp} onClick={scrollup} className="fa-3x uparrowIcon"/>}</Col>
             </Row>}
-            {posts?.length===0&&<div className="NoFound">No posts Found :(</div>}
+            {posts?.length===0&&!isLoading&&<div className="NoFound">No posts Found :(</div>}
            </Col>   
        </Row>
    </div>);

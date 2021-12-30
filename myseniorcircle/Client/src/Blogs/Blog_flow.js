@@ -32,7 +32,6 @@ function Blog_flow()
         prevScrollpos = currentScrollPos;
     };
 
-    console.log(FixedVal);
     return (<div>
          <CustomNavbar FixedVal={FixedVal}/>
          <AllBlogs Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>

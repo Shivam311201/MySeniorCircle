@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import Profile from "../images/profile.jpg";
 import AllBlog from "./AllBlog";
@@ -8,12 +8,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FileBase from "react-file-base64";
 import {updateuser} from "../Actions/user.js";
 import {useDispatch} from "react-redux";
+import { useNavigate } from "react-router-dom";
 import './userPage.css';
 
 function UserOpt(props)   
 {
   const user=JSON.parse(localStorage.getItem("profile")); 
   const dispatch=useDispatch();
+  const navigate=useNavigate();
+
+  const [winHeight,setHeight]=useState(window.innerHeight);
+  const [winWidth,setWidth]=useState(window.innerWidth);
+  useEffect(() => {
+      function handleResize() {
+        setHeight(window.innerHeight);
+        setWidth(window.innerWidth);
+      }
+      window.addEventListener('resize', handleResize)
+  });
 
   const Intialform={
     emailid:user.data.result.emailid,
@@ -24,9 +36,9 @@ function UserOpt(props)
     Experience:user.data.result?.Experience,
     token:user.data.token
   }
-  const[option,setOption]=useState(2);
   const[editProfile,setProfile]=useState(false);
   const[form,setform]=useState(Intialform);
+  const profilePath="/user/profile/";
 
   function handleChange(e){
     setform({...form,[e.target.name]:e.target.value});
@@ -35,7 +47,7 @@ function UserOpt(props)
   return (<div>
      <Row className="m-0 p-0">
          <Col className="m-0 p-0" lg={4} md={4} sm={0} xs={0} style={{backgroundColor:"#0B0D17"}}>
-             <div className="user_sidebar">
+             <div className="user_sidebar" style={{height:(winHeight-57)}}>
                  {editProfile&&<div className="detail">
                  <button className="detail_button" onClick={()=>{
                      setProfile(false);
@@ -51,12 +63,16 @@ function UserOpt(props)
                  {!editProfile&&<div><button className="edit_button" onClick={()=>setProfile(true)}>Edit</button>
                  <div className="usersidebar_opt">
                  <div className="option1">
-                 <FontAwesomeIcon icon={faPenSquare} size="lg" className="myBlog_icon"/>
-                 &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer",width:"fit-content"}} onClick={()=>setOption(2)}>Write Blog</div>    
+                 <FontAwesomeIcon icon={faBook} size="lg" className="myBlog_icon"/>
+                 &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer"}} onClick={()=>{
+                  navigate(profilePath+"myblogs");
+                  }}>My Blogs</div>    
                  </div>
                  <div className="option2">
-                 <FontAwesomeIcon icon={faBook} size="lg" className="myBlog_icon"/>
-                 &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer"}} onClick={()=>setOption(1)}>My Blogs</div>    
+                 <FontAwesomeIcon icon={faPenSquare} size="lg" className="myBlog_icon"/>
+                 &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer",width:"fit-content"}} onClick={()=>{
+                  navigate(profilePath+"writeblog");
+                  }}>Write Blog</div>    
                  </div>
                  </div>
                  </div>}
@@ -67,7 +83,7 @@ function UserOpt(props)
               </div>
          </Col>
          <Col className="m-0 p-0" lg={8} md={8} sm={12} xs={12}>
-         {option===1?<AllBlog arrowVal={props.arrowVal}/>:<WriteBlog/>}
+         {props.option===1?<AllBlog arrowVal={props.arrowVal}/>:<WriteBlog/>}
          </Col>   
      </Row>
   </div>);

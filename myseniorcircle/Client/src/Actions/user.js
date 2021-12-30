@@ -3,8 +3,10 @@ import * as api from "../api/index";
 export const signin=(form,navigator)=> async (dispatch)=>
 {
     try {
+        dispatch({type:START_LOADING});
         const data= await api.signIn(form);
         dispatch({type:AUTH,data});
+        dispatch({type:END_LOADING});
         navigator("/");
     } catch (error) {
         const code=error.response.status;
@@ -19,11 +21,14 @@ export const signin=(form,navigator)=> async (dispatch)=>
 export const signup=(form,navigator)=> async (dispatch)=>
 {
     try {
+        dispatch({type:START_LOADING});
         const data=await api.signUp(form);
         dispatch({type:AUTH,data});
+        dispatch({type:END_LOADING});
         navigator("/");
     } catch (error) {
         console.log(error);
+        dispatch({type:END_LOADING});
     }
 };
 export const updateuser=(form)=> async(dispatch)=>
@@ -31,6 +36,7 @@ export const updateuser=(form)=> async(dispatch)=>
     try {
         const data=await api.UpdateUser(form);
         dispatch({type:AUTH,data});
+        alert("Profile updated Successfully !!");
     } catch (error) {
         console.log(error);
     }
@@ -59,6 +65,7 @@ export const fetchblogs=()=> async (dispatch) =>
     try {
         dispatch({type:START_LOADING});
         const blogs=await api.fetchBlogs();
+        console.log(blogs.data);
         dispatch({type:FETCH_ALL,payload:blogs.data});
         dispatch({type:END_LOADING});
     } catch (error) {

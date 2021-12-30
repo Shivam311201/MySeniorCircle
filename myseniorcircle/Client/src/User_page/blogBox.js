@@ -6,11 +6,11 @@ import { fetchblogbyid,getuser } from "../Actions/user";
 function BlogBox(props)
 {
     const content=props.item?.content?.substr(0,204);
-    const path="/blogs/userid/"+props.item.user+"/blogid/"+props.item._id;
+    const path="/blogs/read?user="+props.item.user+"&&blog="+props.item._id;
     const navigator=useNavigate();
     const dispatch=useDispatch();
     function RedirectToBlog()
-    {
+    {   
         dispatch(fetchblogbyid(props.item._id));
         dispatch(getuser(props.item.user));
         navigator(path);

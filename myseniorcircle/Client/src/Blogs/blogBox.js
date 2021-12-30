@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchblogbyid, getuser } from "../Actions/user";
 import BlogImage from "../images/BlogImage.jpg";
+
 function BlogBox(props)
 {
     const content=props.item?.content?.substr(0,204);
-    const path="/blogs/userid/"+props.item.user+"/blogid/"+props.item._id;
+    const path="/blogs/read?user="+props.item.user+"&&blog="+props.item._id;
     const navigator=useNavigate();
     const dispatch=useDispatch();
     const RedirectToBlog=()=>

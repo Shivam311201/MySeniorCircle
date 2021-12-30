@@ -1,11 +1,9 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import { useState,useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import "./login_style.css";
 import {InputAdornment,IconButton } from "@material-ui/core";
 import { signin } from "../Actions/user";
 import { Visibility } from "@material-ui/icons";
@@ -13,6 +11,8 @@ import { VisibilityOff } from "@material-ui/icons";
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import "./login_style.css";
+
 function Login(props)
 {
     const [showPassword, setShowPassword] = useState(false);  
@@ -33,15 +33,22 @@ function Login(props)
       }
       const[form,setForm]=useState(FormFormat);
     
-      function handleChange(e)  
-      {
+      function handleChange(e){
         setForm({...form,[e.target.name]:e.target.value});
       }
     
-      function handleSubmit(e)
-      {
+      function handleSubmit(e){
+        if(form.emailid===""){
+          alert("Email Id can't be empty");
+          return;
+        }
+        else if(form.password===""){
+          alert("Password field can't be empty");
+          return;
+        }
         dispatch(signin(form,navigate));
       }  
+
   return(<div className="backg_sign">
      <div className="box-sign">
        {(winWidth>575)&&
@@ -49,8 +56,8 @@ function Login(props)
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Login to Senior Circle</div> 
                 <div className="form_style">
-                <input className="input_style2" onChange={handleChange} required type="text" name="emailid" placeholder="Email id"/><br/>
-                <input className="input_style2" onChange={handleChange} required handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
+                <input className="input_style2" onChange={(e)=>handleChange(e)} required type="email" name="emailid" placeholder="Email id"/><br/>
+                <input className="input_style2" onChange={(e)=>handleChange(e)} required handleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
                 <InputAdornment className="eye">
                 <IconButton onClick={handleShowPassword} >
                   {showPassword===true ? <Visibility /> : <VisibilityOff />}
@@ -58,13 +65,8 @@ function Login(props)
                 </InputAdornment>
                 </div>
                 <div className="forgotpass">
-                    Forgot password?
                 </div>
-                <button size="md" className="sign_but3" 
-                onClick={handleSubmit}
-                >LOG IN
-                    {/* <Link to="#">Log-In</Link> */}
-                </button>
+                <button className="sign_but3" onClick={handleSubmit}>LOG IN</button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
                     or log in via
                 </div>
@@ -102,14 +104,8 @@ function Login(props)
                 </IconButton>
                 </InputAdornment>
                 </div>
-                <div className="forgotpass">
-                    Forgot password?
-                </div>
-                <button size="md" className="sign_but3" 
-                onClick={handleSubmit}
-                >LOG IN
-                    {/* <Link to="#">Log-In</Link> */}
-                </button>
+                <div className="forgotpass"></div>
+                <button size="md" className="sign_but3" onClick={handleSubmit}>LOG IN</button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
                     or log in via
                 </div>

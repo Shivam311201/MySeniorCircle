@@ -7,6 +7,7 @@ function CustomNavbar(props)
 {
   const user=JSON.parse(window.localStorage.getItem("profile"));
   const navigate=useNavigate();
+  const profilePath="/user/profile/myblogs";
 
   function logout()
   {
@@ -22,7 +23,7 @@ function CustomNavbar(props)
     <Link to="/" style={{textDecoration:"none"}}><div className="nav_options">Home</div></Link>
     <Link to="/about" style={{textDecoration:"none"}}><div className="nav_options">About</div></Link>
     <Link to="/blogs" style={{textDecoration:"none"}}><div className="nav_options">Blogs</div></Link>
-    {user&&<Link to="/profile/2" style={{textDecoration:"none"}}><div className="nav_options">My Profile</div></Link>}
+    {user&&<Link to={profilePath} style={{textDecoration:"none"}}><div className="nav_options">My Profile</div></Link>}
     </div>
     <div className="button_class">
     {!user&&<Link to="/login" style={{textDecoration:"none"}}><button className="button_login">Login</button></Link>}

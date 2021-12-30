@@ -22,19 +22,33 @@ function Signup(props)
     firstname:"",
     lastname:"",
     emailid:"",
-    Password:""       
+    password:""       
   }
   const[form,setForm]=useState(FormFormat);
   const dispatch=useDispatch();
 
-  function handleChange(e)
-  {
+  function handleChange(e){
       setForm({...form,[e.target.name]:e.target.value});
   }
 
-  function handleSubmit(e)
-  {
+  function handleSubmit(e){
       e.preventDefault();
+      if(form.firstname===""){
+        alert("First name can't be empty !");
+        return;
+      }
+      else if(form.secondname===""){
+        alert("Second name can't be empty !");
+        return;
+      }
+      else if(form.emailid===""){
+        alert("Email Id can't be empty !");
+        return;
+      }
+      else if(form.password===""){
+        alert("Password can't be empty !");
+        return;
+      }
     dispatch(signup(form,navigate));
   }
 
@@ -52,21 +66,17 @@ function Signup(props)
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Create Account</div> 
                 <div style={{textAlign:"center"}}>
-                <input className="input_style1" onChange={handleChange} type="text" name="firstname" placeholder="First Name"/>
-                <input className="input_style1" onChange={handleChange} type="text" name="lastname" placeholder="Last Name"/>
-                <input className="input_style2" onChange={handleChange} type="text" name="emailid" placeholder="Email id"/><br/>
-                <input className="input_style2" onChange={handleChange} tandleShowPassword={handleShowPassword} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
+                <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="firstname" placeholder="First Name"/>
+                <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="lastname" placeholder="Last Name"/>
+                <input className="input_style2" onChange={(e)=>handleChange(e)} type="email" name="emailid" placeholder="Email id"/><br/>
+                <input className="input_style2" onChange={(e)=>handleChange(e)} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
                 <InputAdornment className="eye">
                 <IconButton onClick={handleShowPassword} >
                   {showPassword===true ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
                 </InputAdornment>
                 </div>
-                <button size="md" className="sign_but2" 
-                onClick={handleSubmit}
-                >SIGN UP
-                    {/* <Link to="#">Log-In</Link> */}
-                </button>
+                <button size="md" className="sign_but2" onClick={handleSubmit}>SIGN UP</button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
                     or sign up via
                 </div>

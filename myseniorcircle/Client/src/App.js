@@ -8,9 +8,13 @@ import SingleBlog_flow from "./SingleBlog/SingleBlog_flow";
 import User_flow from "./User_page/user_flow";
 import {useDispatch} from "react-redux";
 import { fetchblogs } from "./Actions/user";
+import { Navigate } from "react-router-dom";
+
 function App() {
   
   const dispatch=useDispatch();
+  const user=JSON.parse(localStorage.getItem("profile"));
+  console.log(user);
   useEffect(()=>{
     dispatch(fetchblogs());
   },[dispatch]);
@@ -19,12 +23,14 @@ function App() {
     <Router>
     <Routes>
     <Route exact path="/" element={<Home_flow/>}/>
-    <Route exact path="/signup" element={<Login_flow val={true}/>}/>
-    <Route exact path="/login" element={<Login_flow val={false}/>}/>
+    <Route exact path="/signup" element={!user?<Login_flow val={true}/>:<Navigate to="/"/>}/>
+    <Route exact path="/login" element={!user?<Login_flow val={false}/>:<Navigate to="/"/>}/>  
     <Route exact path="/about" element={<About_flow/>}/>
     <Route exact path="/blogs" element={<Blog_flow/>}/>
-    <Route exact path="/blogs/userid/:user/blogid/:blog" element={<SingleBlog_flow/>}/>
-    <Route exact path="/profile/2" element={<User_flow/>}/>
+    <Route exact path="/blogs/read" element={<SingleBlog_flow/>}/>
+    <Route exact path="/user/profile/Myblogs" element={<User_flow option={1}/>}/>
+    <Route exact path="/user/profile/writeBlog" element={<User_flow option={2}/>}/>
+
     </Routes>
     </Router>);
 }
