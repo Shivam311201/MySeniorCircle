@@ -18,9 +18,16 @@
     font-family: 'Roboto Slab', serif;
     font-size: 18px;
     color: #fff;
-    margin-top: -15px;
-    margin-left: 300px;
+    margin-top: -7px;
+    margin-left: 20px;
     background-color: #0B0D17;
+}
+.PostExperience{
+    padding-left: 70px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px; 
+    font-weight: 400;
+    color: #181D31;
 }
 .blogs2_but{
     height: 45px;
@@ -30,8 +37,8 @@
     font-family: 'Roboto Slab', serif;
     font-size: 18px;
     color: #fff;
-    margin-top: -15px;
-    margin-left: 300px;
+    margin-top: -7px;
+    margin-left: 20px;
     background-color: #0B0D17;
 }
 .blogs_but:hover{
@@ -58,12 +65,12 @@
 }
 .Inputstyle{
     width:250px;
-    border-radius: 8px;
-    height: 35px;
+    border-radius: 5px;
+    height: 40px;
     margin-top: 10px;
     margin-left: 3px;
-    padding-left: 10px;
-    color: #D9DBE1;
+    padding: 15px;
+    border: #0B0D17 solid 0.5px;
 }  
 .Anchor-style:hover{
     color:#D9DBE1;

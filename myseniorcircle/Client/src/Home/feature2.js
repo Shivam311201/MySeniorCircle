@@ -12,10 +12,15 @@ function Feature2()
         <div className="Fea1_title">
         Explore the guide <br/> within you
         </div>
-        <div className="fea1_para">There is a general saying, "Teacher is the best friend". Your inteview experiences can be a teacher for someone. Your experiences can change one's complete life. Your blogs can act as guide to someone to crack placement. If you are comfortable, please share your experiences. <br/><br/> <b>Post your experiences:</b></div>
-        <Link to={user?"/profile/2":"/login"} style={{textDecoration:"none"}}>
+        <div className="fea1_para">There is a general saying, "Teacher is the best friend". Your inteview experiences can be a teacher for someone. Your experiences can change one's complete life. Your blogs can act as guide to someone to crack placement. If you are comfortable, please share your experiences.<br/><br/></div>
+        <div style={{display:"flex"}}>
+        <div className="PostExperience"><b>Post your experiences:</b></div>
+        <div>
+        <Link to={user?"/user/profile/writeBlog":"/login"} style={{textDecoration:"none"}}>
         <button className="blogs2_but">Write blog</button>
         </Link>
+        </div>
+        </div>
         </Col>
     </Row>
    </div>); 

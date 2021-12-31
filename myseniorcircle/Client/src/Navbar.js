@@ -1,13 +1,15 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Logo from "./images/logo.png"
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import decode from "jwt-decode";
 import "./style.css";
 
 function Navbar()
 {
   const user=JSON.parse(window.localStorage.getItem("profile"));
   const navigate=useNavigate();
+  const location=useLocation();
   const profilePath="/user/profile/myblogs";
 
   function logout()
@@ -15,6 +17,17 @@ function Navbar()
     window.localStorage.clear();
     navigate('/');
   }
+
+  useEffect(() => {
+    const token = user?.data?.token;
+
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) 
+      logout();
+    }
+  }, [location]);
 
   return (<div className="nav_row">
      <Link to="/" style={{textDecoration:"none"}}><img src={Logo} className="logo_img"/></Link>

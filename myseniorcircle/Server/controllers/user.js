@@ -46,18 +46,13 @@ export const signup = async (req, res) => {
 };
 export const signwithGoogle=async(req,res)=>{
   const { firstname, lastname, emailid, password } = req.body;
-  console.log(emailid);
+  
   try {
       const oldUser = await User.findOne({ emailid });
     
       if (oldUser){
-        const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
-        if (isPasswordCorrect) {
-          const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, { expiresIn: "1h"});
-          return res.status(200).json({ result:oldUser, token });
-        } else {
-          return res.status(400).json({ message: "Invalid credentials" });
-        }
+        const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, { expiresIn: "1h"});
+        return res.status(200).json({ result:oldUser, token });
       }
       else{
           const hashedPassword = await bcrypt.hash(password, 12);

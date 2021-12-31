@@ -12,10 +12,13 @@ function Feature1()
         <div className="Fea1_title">
         Turning interviews to <br/>Experiences
         </div>
-        <div className="fea1_para">There is a general saying, "Turning wounds into wisdoms". We aim at converting the wounds caused at interviews into wisdom of experiences as we know <b>Experiences Talks</b>. We make our audience to learn from the past experiences of others. <br/>Want to be part of it and learn from others' experiences ? <br/><br/> <b>Go check out the blogs:</b></div>
-        <Link to="/blogs" style={{textDecoration:"none"}}>
-        <button className="blogs_but">Blogs</button>
-        </Link>
+        <div className="fea1_para">There is a general saying, "Turning wounds into wisdoms". We aim at converting the wounds caused at interviews into wisdom of experiences as we know <b>Experiences Talks</b>. We make our audience to learn from the past experiences of others. <br/>Want to be part of it and learn from others' experiences ? <br/><br/></div>
+        <div style={{display:"flex"}}>
+            <div className="PostExperience"> <b>Go check out the blogs:</b></div>
+                <div><Link to="/blogs" style={{textDecoration:"none"}}>
+                <button className="blogs_but">Blogs</button>
+                </Link></div>
+            </div>
         </Col>
         <Col xs={12} sm={12} md={6} lg={5} className="m-0 p-0" style={{display:"flex",flexDirection:"row-reverse"}}><img className="fea1_img" src={Feature1Img}/></Col>
     </Row>
