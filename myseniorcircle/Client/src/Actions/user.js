@@ -10,12 +10,11 @@ export const signin=(form,navigator)=> async (dispatch)=>
         navigator("/");
     } catch (error) {
         const code=error.response.status;
+        dispatch({type:END_LOADING});
         if(code===400)
-        alert("Invalid Credentials !!\nTry again.");
-        else if(code===404){
-        alert("User doesn't exist !!\nPlease sign up.");
-        navigator("/signup");
-        }
+        alert("Invalid Credentials !!");
+        else if(code===404)
+        alert("User doesn't exist !!");
     }
 };
 export const signup=(form,navigator)=> async (dispatch)=>
@@ -27,10 +26,24 @@ export const signup=(form,navigator)=> async (dispatch)=>
         dispatch({type:END_LOADING});
         navigator("/");
     } catch (error) {
-        console.log(error);
+        const code=error.response.status;
         dispatch({type:END_LOADING});
+        if(code===400)
+            alert("User already exists !!");
     }
 };
+export const googleauth=(form,navigator)=>async(dispatch)=>{
+    try {
+        dispatch({type:START_LOADING});
+        const data=await api.GoogleAuth(form);
+        dispatch({type:AUTH,data});
+        dispatch({type:END_LOADING});
+        navigator("/");
+    } catch (error) {
+        dispatch({type:END_LOADING});
+        console.log(error);
+    }
+}
 export const updateuser=(form)=> async(dispatch)=>
 {
     try {
@@ -65,7 +78,6 @@ export const fetchblogs=()=> async (dispatch) =>
     try {
         dispatch({type:START_LOADING});
         const blogs=await api.fetchBlogs();
-        console.log(blogs.data);
         dispatch({type:FETCH_ALL,payload:blogs.data});
         dispatch({type:END_LOADING});
     } catch (error) {

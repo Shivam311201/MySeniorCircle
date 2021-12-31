@@ -141,7 +141,7 @@ margin-top: 3%;
     transition-delay: 80ms;
 }
 .sign_but1:hover{
-  background: #F1E4FF ;
+  background: #fff ;
   color: #0B0D17;
   transition-delay: 80ms;
   border-radius: 6px;
@@ -162,7 +162,7 @@ margin-top: 3%;
     transition-delay: 80ms;
   }
 .sign_but2:hover{
-  background: #F1E4FF ;
+  background: #fff ;
   color: #0B0D17;
   transition-delay: 80ms;
   border-radius: 6px;
@@ -179,12 +179,12 @@ margin-top: 3%;
     font-weight: 500;
     margin-left: 40%;
     margin-top: 5%;
-    transition-delay: 80ms;
   }
 .sign_but3:hover{
-  background: #F1E4FF ;
   color: #0B0D17;
-  transition-delay: 80ms;
+  background-color: #fff;
+  transition-delay: 60ms;
+  transition-duration: 0.5s;
   border-radius: 6px;
 }
 .input_style1{
@@ -200,6 +200,31 @@ margin-top: 3%;
   margin-left: 10px;
   margin-right: 10px;
   font-size: medium;
+}
+.googleStyle{
+  background-color: #0B0D17;
+  text-align: center;
+  color: #fff;
+  width: 250px;
+  font-size: 18px;
+  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+  border: solid 2px #0B0D17;
+  margin-left: 130px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+.googleStyle:hover{
+  background-color: white;
+  color: #0B0D17;
+  transition-delay: 50ms;
+  transition-duration: 0.8s;
+}
+.googleIcon{
+  margin-top: -3px;
+  margin-right: 8px;
 }
 .authLoad{
   z-index: 2;

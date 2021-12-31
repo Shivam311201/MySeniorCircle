@@ -13,7 +13,7 @@ function AllBlog(props)
     }
     
     const val=JSON.parse(window.localStorage.getItem("profile"));
-    const curUser=val?.data.result._id;
+    const curUser=val?.data?.result?._id;
     const { posts,isLoading }=useSelector((state)=>state.posts);
     
     var fnd=false;

@@ -21,7 +21,7 @@ function Login_flow(props)
       window.addEventListener('resize', handleResize);
     });
 
- return(<div>
+  return(<div>
   {isLoading&&<div className="authLoad"><CircularProgress size="6rem"/></div>}
     <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}} className={isLoading?"ManageOpacity":""}>
      <div className="outercircle1">

@@ -3,7 +3,7 @@ const API=axios.create({baseURL:"http://localhost:4000"});
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
-      req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).data.token}`;
+      req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile'))?.data?.token||JSON.parse(localStorage.getItem('profile'))?.token}`;
     }
     return req;
   });
@@ -19,3 +19,4 @@ export const LikePost=(id)=>API.patch(`/blogs/like/${id}`);
 export const UpdateUser=(form)=>API.patch(`/user/updateDetails`,form);
 export const GetUser=(id)=>API.get(`/user/getDetails/${id}`);
 export const CommentPost=(id,form)=>API.patch(`/blogs/comment/${id}`,form);
+export const GoogleAuth=(formData)=>API.post('/googleauth',formData);

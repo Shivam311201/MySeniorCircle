@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { faSearch,faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
-import "./blog_style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Blog from "../images/blog.png"
 import BlogBox from "./blogBox";
@@ -9,6 +8,7 @@ import { useSelector } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { fetchbysearch } from "../Actions/user";
+import "./blog_style.css";
 
 function AllBlogs(props)   
 {

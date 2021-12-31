@@ -28,13 +28,13 @@ function UserOpt(props)
   });
 
   const Intialform={
-    emailid:user.data.result.emailid,
-    firstname:user.data.result.firstname,
-    lastname:user.data.result.lastname,
-    photo:user.data.result?.photo,
-    collegeName:user.data.result?.collegeName,
-    Experience:user.data.result?.Experience,
-    token:user.data.token
+    emailid:user?.data?.result?.emailid,
+    firstname:user?.data?.result?.firstname,
+    lastname:user?.data?.result?.lastname,
+    photo:user?.data?.result?.photo,
+    collegeName:user?.data?.result?.collegeName,
+    Experience:user?.data?.result?.Experience,
+    token:user?.data?.token
   }
   const[editProfile,setProfile]=useState(false);
   const[form,setform]=useState(Intialform);
@@ -58,7 +58,7 @@ function UserOpt(props)
                      dispatch(updateuser(form));
                      }}>Save</button>
                  </div>}
-                 <div className="usersidebar_title" style={(editProfile==true)?{marginTop:"1px"}:{}}>{user?.data?.result?.firstname} {user?.data?.result?.lastname}</div>
+                 <div className="usersidebar_title" style={(editProfile==true)?{marginTop:"1px"}:{}}>{form.firstname} {form.lastname}</div>
                  <img src={form.photo?form.photo:Profile} className="usersidebar_img"/>
                  {!editProfile&&<div><button className="edit_button" onClick={()=>setProfile(true)}>Edit</button>
                  <div className="usersidebar_opt">

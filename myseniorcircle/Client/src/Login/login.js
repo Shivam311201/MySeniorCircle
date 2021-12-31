@@ -5,12 +5,13 @@ import Col from "react-bootstrap/Col";
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {InputAdornment,IconButton } from "@material-ui/core";
-import { signin } from "../Actions/user";
+import { signin,googleauth } from "../Actions/user";
 import { Visibility } from "@material-ui/icons";
 import { VisibilityOff } from "@material-ui/icons";
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import {GoogleLogin} from "react-google-login";
 import "./login_style.css";
 
 function Login(props)
@@ -18,6 +19,7 @@ function Login(props)
     const [showPassword, setShowPassword] = useState(false);  
     const handleShowPassword = () => setShowPassword(!showPassword);
     const[winWidth, setWidth]=useState(window.innerWidth);
+
       useEffect(() => {
         function handleResize() {
           setWidth(window.innerWidth);
@@ -49,6 +51,21 @@ function Login(props)
         dispatch(signin(form,navigate));
       }  
 
+      const googleSuccess = async (res) => {
+        const result = res?.profileObj;
+
+        form.emailid=result.email;
+        form.password=result.googleId;
+
+        try {
+          dispatch(googleauth(form,navigate));
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
+
   return(<div className="backg_sign">
      <div className="box-sign">
        {(winWidth>575)&&
@@ -64,16 +81,22 @@ function Login(props)
                 </IconButton>
                 </InputAdornment>
                 </div>
-                <div className="forgotpass">
-                </div>
+                <div className="forgotpass">Forgot password?</div>
                 <button className="sign_but3" onClick={handleSubmit}>LOG IN</button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
-                    or log in via
+                --------- OR --------- 
                 </div>
-                <div style={{textAlign:"center",marginTop:"5px"}}>
-                <GoogleIcon fontSize="large"/>
-                <FacebookIcon fontSize="large"/>
-                <LinkedInIcon fontSize="large"/>
+                <div style={{textAlign:"center",marginTop:"5px",backgroundColor:"white"}}>
+                <GoogleLogin
+                  clientId="348438982756-1sii29uv02r004hm3vqemk8l761arkop.apps.googleusercontent.com"
+                  render={(renderProps) => (
+                  <div className="googleStyle" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <GoogleIcon className="googleIcon"/> 
+                  Sign in with Google</div>)}
+                  onSuccess={googleSuccess}
+                  onFailure={googleError}
+                  cookiePolicy="single_host_origin"
+                />
                 </div>
              </Col>
              <Col className="sign2_detail" lg={4} md={4} sm={4} xs={12}>
@@ -107,7 +130,7 @@ function Login(props)
                 <div className="forgotpass"></div>
                 <button size="md" className="sign_but3" onClick={handleSubmit}>LOG IN</button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
-                    or log in via
+                --------- OR --------- 
                 </div>
                 <div style={{textAlign:"center",marginTop:"5px"}}>
                 <GoogleIcon fontSize="large"/>

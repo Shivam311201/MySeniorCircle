@@ -13,7 +13,6 @@ export const addBlog= async(req,res)=>{
 }
 
 export const fetchAllblogs =async(req,res)=>{
-
     try {
         const allBlogs=await Blog.find();
         res.status(200).json(allBlogs);

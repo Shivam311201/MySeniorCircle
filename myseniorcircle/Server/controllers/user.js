@@ -44,6 +44,38 @@ export const signup = async (req, res) => {
     res.status(500).json({ message: "Something went wrong" });
   }
 };
+export const signwithGoogle=async(req,res)=>{
+  const { firstname, lastname, emailid, password } = req.body;
+  console.log(emailid);
+  try {
+      const oldUser = await User.findOne({ emailid });
+    
+      if (oldUser){
+        const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
+        if (isPasswordCorrect) {
+          const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, { expiresIn: "1h"});
+          return res.status(200).json({ result:oldUser, token });
+        } else {
+          return res.status(400).json({ message: "Invalid credentials" });
+        }
+      }
+      else{
+          const hashedPassword = await bcrypt.hash(password, 12);
+          const result = await User.create({
+            firstname,
+            lastname,
+            emailid,
+            password: hashedPassword,
+          });
+          const token = jwt.sign({ email: result.email, id: result._id }, secret, {
+            expiresIn: "1h",
+          });
+          res.status(201).json({ result, token});  
+      }
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
+  }  
+}
 export const getUser=async(req,res)=>{
   const {id}=req.params;
   try {

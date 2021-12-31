@@ -2,17 +2,17 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
-import { signup } from "../Actions/user";
+import { googleauth, signup } from "../Actions/user";
 import Col from "react-bootstrap/Col";
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux"; 
-import "./login_style.css";
 import {InputAdornment,IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import { VisibilityOff } from "@material-ui/icons";
 import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GoogleLogin from "react-google-login";
+import "./login_style.css";
+
 function Signup(props)
 {
   const [showPassword, setShowPassword] = useState(false);  
@@ -52,6 +52,23 @@ function Signup(props)
     dispatch(signup(form,navigate));
   }
 
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+
+    form.firstname=result.givenName;
+    form.lastname=result.familyName;
+    form.emailid=result.email;
+    form.password=result.googleId;
+
+    try {
+      dispatch(googleauth(form,navigate));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
+
   return(<div className="backg_sign">
      <div className="box-sign">
          <Row className="m-0">
@@ -78,12 +95,19 @@ function Signup(props)
                 </div>
                 <button size="md" className="sign_but2" onClick={handleSubmit}>SIGN UP</button>
                 <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
-                    or sign up via
+                  --------- OR --------- 
                 </div>
                 <div style={{textAlign:"center",marginTop:"5px"}}>
-                <GoogleIcon fontSize="large"/>
-                <FacebookIcon fontSize="large"/>
-                <LinkedInIcon fontSize="large"/>
+                <GoogleLogin
+                  clientId="348438982756-1sii29uv02r004hm3vqemk8l761arkop.apps.googleusercontent.com"
+                  render={(renderProps) => (
+                  <div className="googleStyle" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <GoogleIcon className="googleIcon"/> 
+                  Sign up with Google</div>)}
+                  onSuccess={googleSuccess}
+                  onFailure={googleError}
+                  cookiePolicy="single_host_origin"
+                />
                 </div>
              </Col>
          </Row>

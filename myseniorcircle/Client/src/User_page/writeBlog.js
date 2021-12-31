@@ -14,7 +14,7 @@ function WriteBlog()
         title:"",
         content:"",
         posted:new Date().toDateString(),
-        user:user.data.result._id,
+        user:user?.data?.result?._id,
         blogphoto:"",
         like:[],
         comments:[]

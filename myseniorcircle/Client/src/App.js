@@ -14,7 +14,7 @@ function App() {
   
   const dispatch=useDispatch();
   const user=JSON.parse(localStorage.getItem("profile"));
-  console.log(user);
+
   useEffect(()=>{
     dispatch(fetchblogs());
   },[dispatch]);
@@ -30,7 +30,6 @@ function App() {
     <Route exact path="/blogs/read" element={<SingleBlog_flow/>}/>
     <Route exact path="/user/profile/Myblogs" element={<User_flow option={1}/>}/>
     <Route exact path="/user/profile/writeBlog" element={<User_flow option={2}/>}/>
-
     </Routes>
     </Router>);
 }
