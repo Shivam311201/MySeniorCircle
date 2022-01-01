@@ -8,7 +8,7 @@ import "./blog_style.css";
 function Blog_flow()
 {
     var prevScrollpos = window.pageYOffset;
-    const {isLoading,posts}=useSelector((state)=>state.posts);
+    const {isLoading,posts,searchPosts}=useSelector((state)=>state.posts);
     const [arrowVal,setArrow]=useState(false);
     const [FixedVal,setFixed]=useState(true);
     const [Nav,setNav]=useState(1);
@@ -35,7 +35,7 @@ function Blog_flow()
     return (<div>
          <CustomNavbar FixedVal={FixedVal}/>
          <AllBlogs Nav={Nav} arrowVal={arrowVal} FixedVal={FixedVal}/>
-         {!isLoading&&posts.length!==0&&<Footer/>}
+         {!isLoading&&posts.length!==0&&searchPosts.length!==0&&<Footer/>}
     </div>);
 }
 export default Blog_flow;

@@ -1,7 +1,8 @@
 import React from "react";
+import Feature2Img from "../images/Feature2.png";
 import { Row,Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Feature2Img from "../images/Feature2.png";
+
 function Feature2()
 {
    const user=JSON.parse(localStorage.getItem('profile'));

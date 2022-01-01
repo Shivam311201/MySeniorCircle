@@ -79,6 +79,7 @@ export const fetchblogs=()=> async (dispatch) =>
         dispatch({type:START_LOADING});
         const blogs=await api.fetchBlogs();
         dispatch({type:FETCH_ALL,payload:blogs.data});
+        dispatch({type:FETCH_BY_SEARCH,payload:blogs.data});
         dispatch({type:END_LOADING});
     } catch (error) {
         console.log(error);

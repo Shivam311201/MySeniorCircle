@@ -12,8 +12,8 @@ import "./blog_style.css";
 
 function AllBlogs(props)   
 {
-    const {posts,isLoading}=useSelector((state)=>state.posts);
-    const [search,setSearch]=useState([]);
+    const {isLoading,searchPosts}=useSelector((state)=>state.posts);
+    const [search,setSearch]=useState("");
     const dispatch=useDispatch();
 
     function scrollup(){
@@ -52,14 +52,14 @@ function AllBlogs(props)
             {!isLoading&&<Row className="m-0 p-0">
                 <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>
                     <div className="blog_outerArea">
-                        {posts?.map((item)=>(
+                        {searchPosts?.map((item)=>(
                             <BlogBox key={item._id} item={item}/>
                         ))}
                     </div>
                 </Col>
                 <Col className="m-0 p-0 uparrow" lg={2} md={2} sm={2} xs={2}>{props.arrowVal&&<FontAwesomeIcon icon={faArrowAltCircleUp} onClick={scrollup} className="fa-3x uparrowIcon"/>}</Col>
             </Row>}
-            {posts?.length===0&&!isLoading&&<div className="NoFound">No posts Found :(</div>}
+            {searchPosts?.length===0&&!isLoading&&<div className="NoFound">No posts Found :(</div>}
            </Col>   
        </Row>
    </div>);
