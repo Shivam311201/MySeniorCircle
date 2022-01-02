@@ -1,5 +1,17 @@
-import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST,FETCH_BY_SEARCH, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST, START_LOADING,END_LOADING} from "../constants/actionTypes";
+import {AUTH,FETCH_ALL,CREATE, FETCHSINGLE_POST,FETCH_BY_SEARCH, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST, START_LOADING,END_LOADING, UPDATE_MESSAGE} from "../constants/actionTypes";
 import * as api from "../api/index";
+
+function timer(dispatch)
+{
+    setTimeout(() => {
+        dispatch({type:UPDATE_MESSAGE,payload:""});  
+    }, 1500);
+}
+
+export const updateMsg=(msg)=>async (dispatch)=>{
+    dispatch({type:UPDATE_MESSAGE,payload:msg});
+    timer(dispatch);    
+}
 export const signin=(form,navigator)=> async (dispatch)=>
 {
     try {
@@ -9,12 +21,9 @@ export const signin=(form,navigator)=> async (dispatch)=>
         dispatch({type:END_LOADING});
         navigator("/");
     } catch (error) {
-        const code=error.response.status;
+        const msg=error.response.data.message;
         dispatch({type:END_LOADING});
-        if(code===400)
-        alert("Invalid Credentials !!");
-        else if(code===404)
-        alert("User doesn't exist !!");
+        dispatch(updateMsg(msg));
     }
 };
 export const signup=(form,navigator)=> async (dispatch)=>
@@ -26,10 +35,9 @@ export const signup=(form,navigator)=> async (dispatch)=>
         dispatch({type:END_LOADING});
         navigator("/");
     } catch (error) {
-        const code=error.response.status;
+        const msg=error.response.data.message;
         dispatch({type:END_LOADING});
-        if(code===400)
-            alert("User already exists !!");
+        dispatch(updateMsg(msg));
     }
 };
 export const googleauth=(form,navigator)=>async(dispatch)=>{
@@ -49,7 +57,8 @@ export const updateuser=(form)=> async(dispatch)=>
     try {
         const data=await api.UpdateUser(form);
         dispatch({type:AUTH,data});
-        alert("Profile updated Successfully !!");
+        dispatch({type:UPDATE_MESSAGE,payload:data.data.message});
+        timer(dispatch);
     } catch (error) {
         console.log(error);
     }

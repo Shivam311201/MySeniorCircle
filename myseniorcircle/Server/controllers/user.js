@@ -7,7 +7,7 @@ export const signin = async (req, res) => {
   const { emailid, password } = req.body;
   try {
     const user = await User.findOne({ emailid });
-    if (!user) return res.status(404).json({ message: "user doesn't exist" });
+    if (!user) return res.status(404).json({ message: "User doesn't exist" });
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     
@@ -19,7 +19,7 @@ export const signin = async (req, res) => {
     }
     
   } catch (error) {
-    return res.status(500).json("Something went wrong!");
+    return res.status(500).json("Something went wrong");
   }
 };
 
@@ -96,7 +96,7 @@ export const updateUser=async(req,res)=>{
     OldUser.collegeName=collegeName;
 
     const updatedUser = await User.findByIdAndUpdate(OldUser._id, OldUser, { new: true });
-    res.status(201).json({result:updatedUser,token});
+    res.status(201).json({result:updatedUser,token,message:"Profile updated successfully !!"});
     
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });   

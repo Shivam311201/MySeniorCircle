@@ -1,5 +1,5 @@
-import { FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST, START_LOADING, END_LOADING, FETCH_BY_SEARCH } from "../constants/actionTypes";
-export default (state={posts:[],post:{},user:{},isLoading:true,searchPosts:[]},action)=>
+import { FETCH_ALL,CREATE, FETCHSINGLE_POST, DELETE_POST, LIKE_POST, GET_USER, COMMENT_POST, START_LOADING, END_LOADING, FETCH_BY_SEARCH, UPDATE_MESSAGE } from "../constants/actionTypes";
+export default (state={posts:[],post:{},user:{},isLoading:true,searchPosts:[],message:""},action)=>
 {
     switch(action.type)
     {
@@ -23,6 +23,8 @@ export default (state={posts:[],post:{},user:{},isLoading:true,searchPosts:[]},a
             return {...state,isLoading:true};
         case END_LOADING:
             return {...state,isLoading:false};
+        case UPDATE_MESSAGE:
+            return {...state,message:action.payload};
         default:
             return state;    
     }

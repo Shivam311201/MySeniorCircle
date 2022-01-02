@@ -10,6 +10,17 @@
     margin-top: 20px;
     margin-bottom: 20px;  
 }
+.profileUpdated{
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px; 
+    font-weight: 400;    
+    color: greenyellow;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: -15px;
+    text-align: center;
+    margin-left: 10px !important;
+}
 .user_options{
     font-family: 'Roboto Slab', serif;
     font-size: 20px; 

@@ -7,13 +7,14 @@ import { faPenSquare,faBook } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FileBase from "react-file-base64";
 import {updateuser} from "../Actions/user.js";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import './userPage.css';
 
 function UserOpt(props)   
 {
   const user=JSON.parse(localStorage.getItem("profile")); 
+  const {message}=useSelector((state)=>state.posts);
   const dispatch=useDispatch();
   const navigate=useNavigate();
 
@@ -58,6 +59,7 @@ function UserOpt(props)
                      dispatch(updateuser(form));
                      }}>Save</button>
                  </div>}
+                 {message!=""&&<div className="animated fadeOut profileUpdated" style={{animationDelay: "1s"}}>{message}</div>}
                  <div className="usersidebar_title" style={(editProfile==true)?{marginTop:"1px"}:{}}>{form.firstname} {form.lastname}</div>
                  <img src={form.photo?form.photo:Profile} className="usersidebar_img"/>
                  {!editProfile&&<div><button className="edit_button" onClick={()=>setProfile(true)}>Edit</button>

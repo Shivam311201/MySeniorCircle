@@ -2,10 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
-import { googleauth, signup } from "../Actions/user";
+import { googleauth, signup, updateMsg} from "../Actions/user";
 import Col from "react-bootstrap/Col";
+import { UPDATE_MESSAGE } from "../constants/actionTypes";
 import {Link, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux"; 
+import {useDispatch, useSelector} from "react-redux"; 
 import {InputAdornment,IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import { VisibilityOff } from "@material-ui/icons";
@@ -17,6 +18,7 @@ function Signup(props)
 {
   const [showPassword, setShowPassword] = useState(false);  
   const handleShowPassword = () => setShowPassword(!showPassword);
+  const {message}=useSelector((state)=>state.posts);
   const navigate=useNavigate();
   const FormFormat={
     firstname:"",
@@ -34,19 +36,19 @@ function Signup(props)
   function handleSubmit(e){
       e.preventDefault();
       if(form.firstname===""){
-        alert("First name can't be empty !");
+        dispatch(updateMsg("First name can't be empty"));
         return;
       }
-      else if(form.secondname===""){
-        alert("Second name can't be empty !");
+      else if(form.lastname===""){
+        dispatch(updateMsg("Last name can't be empty"));
         return;
       }
       else if(form.emailid===""){
-        alert("Email Id can't be empty !");
+        dispatch(updateMsg("Email Id can't be empty"));
         return;
       }
       else if(form.password===""){
-        alert("Password can't be empty !");
+        dispatch(updateMsg("Password can't be empty"));
         return;
       }
     dispatch(signup(form,navigate));
@@ -76,12 +78,16 @@ function Signup(props)
                  <div className="data-1">Welcome Back</div>
                  <div className="data-2">Already have an account?</div>
                  <Link to="/login">
-                 <button onClick={()=>{props.formtype(false)}} size="md" className="sign_but1">LOG IN
+                 <button onClick={()=>{
+                  props.formtype(false);
+                  dispatch({type:UPDATE_MESSAGE,payload:""});
+                  }} size="md" className="sign_but1">LOG IN
                  </button>
                  </Link>
              </Col>
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Create Account</div> 
+                {message!=""&&<div className="animated fadeOut errorSignup" style={{animationDelay: "1s"}}>{message}</div>}
                 <div style={{textAlign:"center"}}>
                 <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="firstname" placeholder="First Name"/>
                 <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="lastname" placeholder="Last Name"/>
