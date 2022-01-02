@@ -59,7 +59,7 @@ function UserOpt(props)
                      dispatch(updateuser(form));
                      }}>Save</button>
                  </div>}
-                 {message!=""&&<div className="animated fadeOut profileUpdated" style={{animationDelay: "1s"}}>{message}</div>}
+                 {message!=""&&<div className="animated fadeOut profileUpdated" style={{animationDelay: "0.5s"}}>{message}</div>}
                  <div className="usersidebar_title" style={(editProfile==true)?{marginTop:"1px"}:{}}>{form.firstname} {form.lastname}</div>
                  <img src={form.photo?form.photo:Profile} className="usersidebar_img"/>
                  {!editProfile&&<div><button className="edit_button" onClick={()=>setProfile(true)}>Edit</button>

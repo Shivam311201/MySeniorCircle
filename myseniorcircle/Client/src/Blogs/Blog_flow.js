@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Footer from "../Footer";
-import CustomNavbar from "./CustomNav";
+import CustomNavbar from "../CustomNav";
 import AllBlogs from "./allBlogs";
 import { useSelector } from "react-redux";
 import "./blog_style.css";

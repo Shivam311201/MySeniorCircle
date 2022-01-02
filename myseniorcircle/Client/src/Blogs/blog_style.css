@@ -8,6 +8,7 @@
     width: 100%;
     position:fixed;
     opacity: 1;
+    z-index: 1;
 }
 .nav_row2{
     position:fixed;

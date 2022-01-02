@@ -1,6 +1,5 @@
 import React,{useEffect} from "react";
-import Logo from "../images/logo.png";
-import "./blog_style.css";
+import Logo from "./images/logo.png";
 import {Link} from "react-router-dom";
 import { useNavigate,useLocation } from "react-router-dom";
 import decode from "jwt-decode";
