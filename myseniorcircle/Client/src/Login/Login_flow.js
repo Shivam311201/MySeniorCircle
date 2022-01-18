@@ -23,7 +23,7 @@ function Login_flow(props)
 
   return(<div>
   {isLoading&&<div className="authLoad"><CircularProgress size="6rem"/></div>}
-    <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}} className={isLoading?"ManageOpacity":""}>
+    <div style={{backgroundColor:"#e7e7e8",height:winHeight,width:winWidth}} className={"manageHeight"+(isLoading?" ManageOpacity":"")}>
      <div className="outercircle1">
      <div className="circle1"></div>  
      </div>

@@ -127,7 +127,9 @@ export const deletepost=(id,navigator)=> async(dispatch)=>
 export const likepost=(id)=> async(dispatch)=>
 {
     try {
+        console.log(id);
         const post=await api.LikePost(id);
+        console.log(post);
         dispatch({type:LIKE_POST,payload:post.data});
     } catch (error) {
        console.log(error); 

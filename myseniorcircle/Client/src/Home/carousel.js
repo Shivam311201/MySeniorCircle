@@ -10,13 +10,13 @@ function My_carousel() {
     <div className="CaraouselOuter">
       <Carousel variant="dark">
         <Carousel.Item>
-          <img className="Trends" src={Trending1} alt="First slide" />
+          <img className="Trends_img" src={Trending1} alt="First slide" />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="Trends" src={Trending2} alt="Second slide" />
+          <img className="Trends_img" src={Trending2} alt="Second slide" />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="Trends" src={Trending3} alt="Third slide" />
+          <img className="Trends_img" src={Trending3} alt="Third slide" />
         </Carousel.Item>
       </Carousel>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { googleauth, signup, updateMsg} from "../Actions/user";
 import Col from "react-bootstrap/Col";
 import { UPDATE_MESSAGE } from "../constants/actionTypes";
@@ -19,6 +19,15 @@ function Signup(props)
   const [showPassword, setShowPassword] = useState(false);  
   const handleShowPassword = () => setShowPassword(!showPassword);
   const {message}=useSelector((state)=>state.posts);
+  const [winWidth, setWidth]=useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+  }
+    window.addEventListener('resize', handleResize);
+  });
+  
   const navigate=useNavigate();
   const FormFormat={
     firstname:"",
@@ -73,7 +82,7 @@ function Signup(props)
 
   return(<div className="backg_sign">
      <div className="box-sign">
-         <Row className="m-0">
+     {(winWidth>767)&&<Row className="m-0">
              <Col className="sign_detail" lg={4} md={4} sm={4} xs={12}>
                  <div className="data-1">Welcome Back</div>
                  <div className="data-2">Already have an account?</div>
@@ -116,7 +125,52 @@ function Signup(props)
                 />
                 </div>
              </Col>
-         </Row>
+         </Row>}
+         {(winWidth<768)&&
+         <Row className="m-0">
+             <Col className="sign2_detail" lg={4} md={4} sm={12} xs={12}>
+                 <div className="data-1">Welcome Back</div>
+                 <div className="data-2">Already have an account?</div>
+                 <Link to="/login">
+                 <button onClick={()=>{
+                  props.formtype(false);
+                  dispatch({type:UPDATE_MESSAGE,payload:""});
+                  }} size="md" className="sign_but1">LOG IN
+                 </button>
+                 </Link>
+             </Col>
+             <Col className="sign_form" lg={8} md={8} sm={12} xs={12}>
+             <div className="data-3">Create Account</div> 
+                {message!=""&&<div className="animated fadeOut errorSignup" style={{animationDelay: "1s"}}>{message}</div>}
+                <div style={{textAlign:"center"}}>
+                <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="firstname" placeholder="First Name"/>
+                <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="lastname" placeholder="Last Name"/>
+                <input className="input_style2" onChange={(e)=>handleChange(e)} type="email" name="emailid" placeholder="Email id"/><br/>
+                <input className="input_style2" onChange={(e)=>handleChange(e)} type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
+                <InputAdornment className="eye">
+                <IconButton onClick={handleShowPassword} >
+                  {showPassword===true ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+                </InputAdornment>
+                </div>
+                <button size="md" className="sign_but2" onClick={handleSubmit}>SIGN UP</button>
+                <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
+                --------- OR --------- 
+                </div>
+                <div style={{textAlign:"center",marginTop:"5px"}}>
+                <GoogleLogin
+                  clientId="348438982756-1sii29uv02r004hm3vqemk8l761arkop.apps.googleusercontent.com"
+                  render={(renderProps) => (
+                  <div className="googleStyle" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <GoogleIcon className="googleIcon"/> 
+                  Sign up with Google</div>)}
+                  onSuccess={googleSuccess}
+                  onFailure={googleError}
+                  cookiePolicy="single_host_origin"
+                />
+                </div>
+             </Col>
+         </Row>}
      </div>
   </div>
   )

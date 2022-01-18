@@ -1,12 +1,13 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Coverphoto from "../images/coverphoto.png";
-function Landing()
+
+function Landing(props)
 {
+
   return (<div>
-      <div style={{backgroundColor:"#ddeeff"}}>
-      {/* e8f1fc */}
+      {props.winWidth>650&&<div style={{backgroundColor:"#ddeeff",textAlign:"right"}}>
       <img className="coverPhoto_style" src={Coverphoto}/>
-      </div>  
+      </div>}
       <div className="landing_title">
       <div className="animated fadeIn" style={{animationDelay: "500ms"}}>
       <div className="landing_intro">Introducing</div>

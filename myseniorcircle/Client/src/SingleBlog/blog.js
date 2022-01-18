@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import BlogOpinion from "./BlogOpinion";
 import { useDispatch, useSelector } from "react-redux";
-import "./SingleBlog_style.css";
 import Profile from "../images/profile.jpg";
 import { Col, Row } from "react-bootstrap";
+import ReviewButton from "./ReviewButtons";
 import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { commentpost } from "../Actions/user";
-function Blog()
+import "./SingleBlog_style.css";
+
+function Blog(props)
 {
     const {user}=useSelector((state)=>state.posts);
     const {post}=useSelector((state)=>state.posts);
@@ -46,13 +48,15 @@ function Blog()
     return (<div style={{backgroundColor:"#ddeeff",paddingBottom:"20px"}}>
         <div className="singleBlog_title">{post?.title}</div>
         <div className="singleblog_date">Published on {post.posted}</div>
-        <BlogOpinion user={post?.user} postId={post?._id} myRef={myRef}/>
+        <BlogOpinion user={post?.user} postId={post?._id} myRef={myRef} winWidth={props.winWidth}/>
         <div className="singleblog_content">
         {post?.content}
         </div>
+        {props.winWidth<=750&&<ReviewButton postId={post?._id}  user={post?.user} myRef={myRef}/>}
+        <div className="outerComment">
         <div className="end_line1"></div>
         <Row className="m-0 p-0">
-        <Col className="m-0 p-0" lg={2} md={2} sm={2} xs={2}>
+        <Col className="m-0 p-0" lg={2} md={2} sm={2} xs={2} style={{textAlign:"right"}}>
            <img src={user.photo?user.photo:Profile} className="userPhoto"/> 
         </Col>
         <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>
@@ -69,7 +73,8 @@ function Blog()
                 <b className="usercomment">{item.username}:</b> {item.data}
                 </div>
         ))}
-        <div className="end_line3"></div>
+        <div className="end_line1 end_line3"></div>
+        </div>
     </div>);
 }
 export default Blog;

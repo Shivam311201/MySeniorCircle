@@ -35,7 +35,8 @@ function WriteBlog()
         alert("Please upload a photo related to the blog !");
         dispatch(addblog(form,navigate));
     }
-    return (<div>   
+    return (<div style={{display:"flex",justifyContent:"space-around"}}>   
+        <div>
         <div className="writeHead">Write a Blog...</div>
         <input required name="title" onChange={updateForm} className="writeTitle" type="text" placeholder="Title*"></input>
         <br/>
@@ -48,6 +49,7 @@ function WriteBlog()
         <div className="blogbuttonGroup">
         <button className="button_cancel" onClick={()=>navigate("/")}>Cancel</button>
         <button className="button_post" onClick={postBlog}>Post</button>
+        </div>
         </div>
         </div>
     </div>);

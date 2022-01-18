@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import BlogBox from "./blogBox";
+import BlogBox from "../SharedComp/blogBox";
 import { Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CircularProgress } from "@material-ui/core";
+import "./userPage.css";
 
 function AllBlog(props)
 {
@@ -25,14 +26,15 @@ function AllBlog(props)
     return(<div>
         {isLoading&&<div className="loadProfile"><CircularProgress size="4rem"/></div>}
         {!isLoading&&<Row className="m-0 p-0">
-          <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>
+          <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={12}>
           <div className="user_outerArea">
           {posts?.map((item)=>(
-            (item.user===curUser)&&<BlogBox key={item._id} item={item}/>
-          ))}
+            (item.user===curUser)&&<div className="SingleblogOuter">
+            <BlogBox key={item._id} item={item}/>
+            </div>))}
           </div>       
           </Col>
-          <Col className="m-0 p-0 uparrow" lg={2} md={2} sm={2} xs={2}>{props.arrowVal&&<FontAwesomeIcon icon={faArrowAltCircleUp} onClick={scrollup} className="fa-3x uparrowIcon"/>}</Col>
+          {props.winWidth>576&&<Col className="m-0 p-0 uparrow" lg={2} md={2} sm={2} xs={2}>{props.arrowVal&&<FontAwesomeIcon icon={faArrowAltCircleUp} onClick={scrollup} className="fa-3x uparrowIcon"/>}</Col>}
         </Row>}
         {!fnd&&!isLoading&&<div className="NoFound1">No posts Found :(</div>}
         </div>);

@@ -52,6 +52,7 @@ margin-top: 3%;
     font-family: 'Roboto Slab', serif;
     position: relative;
     justify-content: space-around;
+    align-content: center;
     z-index: 1;
 }
 .sign_detail{
@@ -288,7 +289,57 @@ margin-top: 3%;
 .ManageOpacity{
   opacity: 0.2;
 }
+@media screen and (max-width:1600px){
+  .outercircle1{
+    margin-left: 1280px;
+    margin-top: -135px;
+  }
+  .outercircle2{
+    margin-top: 350px;
+    margin-left: -135px;
+  }
+  .backg_sign{
+    padding-top: 15px;
+  }
+}
+@media screen and (max-width:1500px){
+  .outercircle1{
+    margin-left: 1200px;
+    margin-top: -135px;
+  }
+}
+@media screen and (max-width:1400px){
+  .outercircle1{
+    margin-left: 1100px;
+    margin-top: -135px;
+  }
+  .backg_sign{
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width:1300px){
+  .outercircle1{
+    margin-left: 1000px;
+    margin-top: -135px;
+  }
+  .backg_sign{
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width:1200px){
+  .outercircle1{
+    margin-left: 900px;
+    margin-top: -135px;
+  }
+  .googleStyle{
+    margin-left: 135px;
+  }
+}
 @media screen and (max-width: 1085px) {
+  .outercircle1{
+    margin-left: 780px;
+    margin-top: -135px;
+  }
   .box-sign{
     width: 780px;
     height: 480px;
@@ -299,9 +350,19 @@ margin-top: 3%;
   }
   .sign2_detail{
     height: 480px;
-}  
+  }
+  .backg_sign{
+    padding-top: 35px;
+  }  
+  .googleStyle{
+    margin-left: 120px;
+  }
 }
 @media screen and (max-width: 991px) {
+  .outercircle1{
+    margin-left: 690px;
+    margin-top: -155px;
+  }
   .box-sign{
     width: 750px;
     height: 480px;
@@ -316,18 +377,52 @@ margin-top: 3%;
   .forgotpass{
     margin-left: -150px !important;
   }
+  .backg_sign{
+    padding-top: 37px;
+  }  
+  .googleStyle{
+    margin-left: 110px;
+  }
+}
+@media screen and (max-width: 900px){
+  .outercircle1{
+    margin-left: 650px;
+    margin-top: -155px;
+  }
 }
 @media screen and (max-width: 850px) {
+  .outercircle1{
+    margin-left: 600px;
+    margin-top: -155px;
+    width: 400px;
+    height: 400px;
+  }
+  .circle1{
+    height: 300px;
+    width: 300px;
+    margin-top: 43px;
+    margin-left: 50px;
+  }
+  .outercircle2{
+    width: 400px;
+    height: 400px;
+  }
+  .circle2{
+    height: 300px;
+    width: 300px;
+    margin-top: 43px;
+    margin-left: 50px;
+  }
   .box-sign{
     width: 650px;
-    height: 440px;
-    margin-top: 7%;
+    height: 480px;
+    margin-top: 4.5%;
     }
   .sign_detail{
-    height: 440px;
+    height: 480px;
   }
   .sign2_detail{
-    height: 440px;
+    height: 480px;
   }
   .forgotpass{
     margin-left: -150px !important;
@@ -345,8 +440,15 @@ margin-top: 3%;
     margin-left: 71%;
     margin-top:-6%;
   }
+  .googleStyle{
+    margin-left: 80px;
+  }
 }
 @media screen and (max-width: 780px){
+  .outercircle1{
+    margin-left: 500px;
+    margin-top: -135px;
+  }
   .box-sign{
     width: 600px;
   }
@@ -356,47 +458,85 @@ margin-top: 3%;
   .forgotpass{
     margin-left: -120px !important;
   }
+  .googleStyle{
+    margin-left: 65px;
+  }
 }
-@media screen and (max-width: 711px) {
+@media screen and (max-width:767px) {
   .box-sign{
-    width: 580px;
+    width: 500px;
+  }
+  .manageHeight{
+    height: 870px !important;
+  }
+  .sign2_detail{
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 15px;
+    height: 300px;
+  }
+  .data-1{
+    margin-top: 10%;
+   }
+  .data-2{
+    margin-top: 10%;
+    padding-left: 25px;
+    padding-right: 25px;
+   }
+   .sign_but1
+   {
+    margin-left: 37%;
+    margin-top: 10%;
+   }
+   .sign_form{
+    height: max-content;
+    background-color: #fff;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .eye{
+    margin-top: -25px;
+  }
+  .googleStyle{
+    margin-left: 110px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .box-sign{
+    width: 480px;
+    height: 420px;
+    margin-top: 7%;
+  }
+  .sign2_detail{
+    height: 320px;
+  }
+  .manageHeight{
+    height: 910px !important;
+  }
+  .outercircle1{
+    margin-left: 410px;
+    margin-top: -135px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .box-sign{
+    width: 480px;
     height: 420px;
     margin-top: 7%;
     }
-  .sign_detail{
-    height: 420px;
-  }
-  .sign2_detail{
-    height: 420px;
-  }
-  .forgotpass{
-    margin-left: -100px !important;
-  }
-  .form_style{
-    margin-top: 20px;
-  }
-  .data-3{
-    margin-top: 5%;
-  }
-  .eye{
-    margin-left: 70%;
-  }
 }
 @media screen and (max-width: 584px) {
   @media screen and (min-width:576px){
     .box-sign{
-      width: 500px;
+      width: 480px;
       }
+    .manageHeight{
+      height: 870px !important;
+    }  
     .sign_but2{
       margin-top: 15%;
       margin-left: 35%;
     }
-    .sign_but1{
-      margin-left: 15%;
-    }
-    .sign_but3{
-      margin-left: 35%;
-    }    
     .forgotpass{
       margin-left: -100px !important;
     }
@@ -421,12 +561,15 @@ margin-top: 3%;
         width:76%;
         margin-top: 20px;
     } 
+    .outercircle1{
+      margin-left: 350px;
+      margin-top: -135px;
+    }
   }
 }
 @media screen and (max-width: 575px) {
   .box-sign{
-    width: 380px;
-    height: max-content;
+    width: 430px;
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
@@ -436,7 +579,7 @@ margin-top: 3%;
     border-top-right-radius: 15px;
   }
   .sign2_detail{
-    height: 210px;
+    height: 260px;
     border-bottom-right-radius: 0px;
     border-top-left-radius: 15px;
   }
@@ -453,10 +596,6 @@ margin-top: 3%;
   .data-2{
     margin-top: 3%;
   }
-  .sign_but1{
-    margin-top: 6%;
-    margin-left: 34%;
-  }
   .input_style1{
     width:40%;
     margin-top: 20px;
@@ -469,13 +608,39 @@ margin-top: 3%;
       margin-top: 20px;
   }
   .eye{
-    margin-left: 78%;
-    margin-top: -7%;
+    margin-left: 80%;
   }
   .forgotpass{
     margin-left: -170px !important; 
   }
+  .googleStyle{
+    margin-left: 70px;
+    margin-bottom: 30px;
+  }
+  .outercircle1{
+    margin-left: 300px;
+    margin-top: -135px;
+  }
+  .manageHeight{
+    height: 820px !important;
+  }
 }
+@media screen and (max-width: 500px) {
+  .box-sign{
+    width: 380px;
+  }
+  .data-3{
+    font-size: 32px;
+  }
+  .googleStyle{
+    margin-left: 50px;
+    margin-bottom: 30px;
+  }
+  .outercircle1{
+    margin-left: 260px;
+    margin-top: -135px;
+  }
+}  
 @media screen and (max-width: 431px) {
   .box-sign{
     width: 320px;
@@ -495,10 +660,10 @@ margin-top: 3%;
   }
   .sign_but2{
     margin-top: 13%;
-    margin-left: 35%;
+    margin-left: 33%;
   }
   .sign_but3{
-    margin-left: 37%;
+    margin-left: 34%;
   }
   .data-1{
    margin-top: 10%;
@@ -507,7 +672,6 @@ margin-top: 3%;
     margin-top: 5%;
   }
   .sign_but1{
-    margin-top: 7%;
     margin-left: 34%;
   }
   .input_style1{
@@ -527,5 +691,23 @@ margin-top: 3%;
   }
   .forgotpass{
     margin-left: -130px !important; 
+  }
+  .googleStyle{
+    margin-left: 25px;
+    margin-bottom: 30px;
+  }
+  .data-3{
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .outercircle2{
+    margin-top: 400px;
+  }
+  .outercircle1{
+    margin-left: 200px;   
+  }
+  .manageHeight{
+    height: 800px !important;
   }
 }
