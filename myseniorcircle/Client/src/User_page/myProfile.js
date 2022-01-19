@@ -50,24 +50,27 @@ function MyProfile(props)
     <button className="edit_button" onClick={()=>setProfile(true)}>Edit</button>
     </div>
     <div className="usersidebar_opt">
+    <div>
     <div className="option1">
-    <FontAwesomeIcon icon={faBook} size="lg" className="myBlog_icon"/>
+    <FontAwesomeIcon icon={faBook} className="myBlog_icon"/>
     &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer"}} onClick={()=>{
      navigate(profilePath+"myblogs");
      }}>My Blogs</div>    
     </div>
     <div className="option2">
-    <FontAwesomeIcon icon={faPenSquare} size="lg" className="myBlog_icon"/>
+    <FontAwesomeIcon icon={faPenSquare} className="myBlog_icon"/>
     &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer",width:"fit-content"}} onClick={()=>{
      navigate(profilePath+"writeblog");
      }}>Write Blog</div>    
     </div>
     </div>
+    </div>
     </div>}
     {editProfile&&<div>
-     <div className="fileinput"><FileBase type="file" multiple={false} onDone={({base64})=>setform({...form,photo:base64})}/></div>
+     <div style={{display:"flex",justifyContent:"right"}}><div className="fileinput"><FileBase type="file" multiple={false} onDone={({base64})=>setform({...form,photo:base64})}/></div></div>
      <input required name="collegeName" value={form.collegeName} onChange={(e)=>handleChange(e)} className="writeDetails" type="text" placeholder="College name"></input>
-     <textarea required name="Experience" value={form.Experience} onChange={(e)=>handleChange(e)} className="writeExperience" type="text" placeholder="About Yourself"/></div>}
+     <textarea required name="Experience" value={form.Experience} onChange={(e)=>handleChange(e)} className="writeExperience" type="text" placeholder="About Yourself"/>
+    </div>}
  </div>);
 }
 export default MyProfile;

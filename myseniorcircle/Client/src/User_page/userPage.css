@@ -7,7 +7,8 @@
     width:422px;
 }
 .usersidebar_opt{
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;  
 }
@@ -86,10 +87,7 @@
     padding-bottom: 15px;
     padding-top: 15px;
 }
-.edit_button
-{
-    width:60px;
-    height:38px;
+.edit_button{
     border-radius: 4px;
     border: #0B0D17;
     font-family: 'Roboto Slab', serif;
@@ -98,6 +96,9 @@
     background-color: #fff;
     color: #0B0D17;
     margin-top: 40px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-right: 30px;
 }
 .edit_button:hover{
@@ -108,9 +109,9 @@
     cursor: pointer;
 }
 .detail_button{
+    padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    height:38px;
     border-radius: 4px;
     margin-left: 15px;
     margin-top: -10px;
@@ -129,16 +130,18 @@
     cursor: pointer;
 }
 .detail{
-    margin-left: 200px;
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
 }
 .option1{
     display: flex;
-    margin-left: 120px;
+    font-size: 20px;
     width: max-content;
 }
 .option2{
+    font-size: 20px;
     display: flex;
-    margin-left: 120px;
     width: max-content;
 }
 .option1:hover{
@@ -338,8 +341,29 @@
     }
     
 }
-@media screen and (max-width:1000px){
-    
+@media screen and (max-width:992px){
+    .user_sidebar{
+        width: 100%;
+        height: 100vh;
+    }
+    .fileinput{
+        display: flex;
+        justify-content: right;
+        width: 25%;
+    }
+    .option1,.option2{
+        font-size: 30px;
+    }
+    .user_options{
+        font-size: 30px;
+        margin-top: -5px;
+    }
+    .detail_button,.edit_button{
+        font-size: 23px;
+    }
+    .profileUpdated{
+        font-size: 20px;
+    }
 }
 @media screen and (max-width:991px){
     .user_outerArea{
@@ -350,6 +374,7 @@
         margin-left: 0px;
         width: 700px;
     }
+    
     .writeContent{
         height: 320px;
     }
@@ -363,6 +388,13 @@
     }
     .fileinput1{
         margin-left: 0px;
+    }
+    .usersidebar_title{
+        font-size: 52px;
+    }
+    .usersidebar_img{
+        width: 270px;
+        height: 270px;
     }
 }
 @media screen and (max-width:950px){
@@ -425,14 +457,59 @@
     }
 }
 @media screen and (max-width:550px){
-    .writeContent,.writeTitle
-    {
+    .writeContent,.writeTitle{
         width: 450px;
+    }
+    .detail{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .usersidebar_title{
+        font-size: 48px;
+    }
+    .usersidebar_img{
+        height: 250px;
+        width: 250px;
+        margin-top: 10px;
+    }
+    .edit_button{
+        font-size: 20px;
+        margin-right: 40px;
+    }
+    .detail_button{
+        font-size: 20px;
+    }
+    .option1,.option2{
+        font-size: 28px;
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+    .user_options{
+        font-size: 28px;
+    }
+    .usersidebar_opt{
+        display: flex;
+        justify-content: space-around;
+    }
+    .fileinput{
+        width: 28%;
+        margin-right: 40px;
+    }
+    .writeExperience,.writeDetails{
+        width: 75%;
+    }
+    .writeDetails{
+        margin-top: 20px;
+    }
+    .writeExperience{
+        margin-top: 10px;
+    }
+    .profileUpdated{
+        font-size: 17px;
     }
 }
 @media screen and (max-width:500px){
-    .writeContent,.writeTitle
-    {
+    .writeContent,.writeTitle{
         width: 400px;
     }
     .writeHead{
@@ -440,8 +517,7 @@
     }
 }
 @media screen and (max-width:450px){
-    .writeContent,.writeTitle
-    {
+    .writeContent,.writeTitle{
         width: 350px;
     }
     .blogbuttonGroup{
@@ -449,11 +525,13 @@
     }
     .writeContent{
         height: 280px;
-    }    
+    }   
+    .option1,.option2,.user_options{
+        font-size: 25px;
+    } 
 }
 @media screen and (max-width:400px){
-    .writeContent,.writeTitle
-    {
+    .writeContent,.writeTitle{
         width: 320px;
     }
     .blogbuttonGroup{
@@ -462,6 +540,16 @@
     .writeContent{
         height: 280px;
     }    
+    .usersidebar_title{
+        font-size: 44px;
+    }
+    .usersidebar_img{
+        height: 220px;
+        width: 220px;
+    }
+    .usersidebar_opt{
+        margin-top: 15px;
+    }
 }
 @media screen and (max-width:350px){
     

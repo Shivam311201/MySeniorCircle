@@ -27,12 +27,18 @@ function WriteBlog()
     }
     function postBlog()
     {
-        if(form.title==="")
+        if(form.title===""){
         alert("Title can't be empty !");
-        if(form.content==="")
+        return;
+        }
+        if(form.content===""){
         alert("Description can't be empty !");
-        if(form.blogphoto==="")
+        return;
+        }
+        if(form.blogphoto===""){
         alert("Please upload a photo related to the blog !");
+        return;
+        }
         dispatch(addblog(form,navigate));
     }
     return (<div style={{display:"flex",justifyContent:"space-around"}}>   

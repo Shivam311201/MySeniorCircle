@@ -13,7 +13,6 @@ function Navbar(props)
   const [Toggle,setToggle]=useState(false);
   const navigate=useNavigate();
   const location=useLocation();
-  const profilePath="/user/profile/myblogs";
 
   function logout()
   {
@@ -43,7 +42,7 @@ function Navbar(props)
      <Link to="/" style={{textDecoration:"none"}}><div className="nav_options">Home</div></Link>
      <Link to="/about" style={{textDecoration:"none"}}><div className="nav_options">About</div></Link>
      <Link to="/blogs" style={{textDecoration:"none"}}><div className="nav_options">Blogs</div></Link>
-     {user&&<Link to={profilePath} style={{textDecoration:"none"}}><div className="nav_options">My Profile</div></Link>}
+     {user&&<Link to="/user/profile" style={{textDecoration:"none"}}><div className="nav_options">My Profile</div></Link>}
      </div>
      <div className="button_class">
      {!user&&<Link to="/login" style={{textDecoration:"none"}}><button className="button_login">Login</button></Link>}
@@ -65,7 +64,7 @@ function Navbar(props)
         <Link to="/" style={{textDecoration:"none"}}><div className="nav_options2"><div onClick={()=>setToggle(false)}><FontAwesomeIcon icon={faHome}/>&nbsp;&nbsp;Home</div></div></Link>
         <Link to="/about" style={{textDecoration:"none"}}><div className="nav_options2"><div onClick={()=>setToggle(false)}><FontAwesomeIcon icon={faAddressCard}/>&nbsp;&nbsp;About</div></div></Link>
         <Link to="/blogs" style={{textDecoration:"none"}}><div className="nav_options2"><div onClick={()=>setToggle(false)}><FontAwesomeIcon icon={faBookOpen}/>&nbsp;&nbsp;Blogs</div></div></Link>
-        {user&&<Link to="user/profile" style={{textDecoration:"none"}}><div className="nav_options2"><div onClick={()=>setToggle(false)}><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;My Profile</div></div></Link>}
+        {user&&<Link to="/user/profile" style={{textDecoration:"none"}}><div className="nav_options2"><div onClick={()=>setToggle(false)}><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;My Profile</div></div></Link>}
         {user&&<div className="nav_options2" onClick={()=>logout()}><div onClick={()=>setToggle(false)}><FontAwesomeIcon icon={faSignOutAlt}/>&nbsp;&nbsp;Log Out</div></div>}
       </div>
     </div>
