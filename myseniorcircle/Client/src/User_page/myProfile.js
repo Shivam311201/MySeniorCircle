@@ -46,20 +46,20 @@ function MyProfile(props)
     <div className="usersidebar_title" style={(editProfile==true)?{marginTop:"1px"}:{}}>{form.firstname} {form.lastname}</div>
     <img src={form.photo?form.photo:Profile} className="usersidebar_img"/>
     {!editProfile&&<div>
-    <div style={{display:"flex",justifyContent:"right"}}>
+    <div className="justifyRight">
     <button className="edit_button" onClick={()=>setProfile(true)}>Edit</button>
     </div>
     <div className="usersidebar_opt">
     <div>
     <div className="option1">
     <FontAwesomeIcon icon={faBook} className="myBlog_icon"/>
-    &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer"}} onClick={()=>{
+    &nbsp;&nbsp;&nbsp;<div className="user_options pointer" onClick={()=>{
      navigate(profilePath+"myblogs");
      }}>My Blogs</div>    
     </div>
     <div className="option2">
     <FontAwesomeIcon icon={faPenSquare} className="myBlog_icon"/>
-    &nbsp;&nbsp;&nbsp;<div className="user_options" style={{cursor:"pointer",width:"fit-content"}} onClick={()=>{
+    &nbsp;&nbsp;&nbsp;<div className="user_options pointer FitWidth" onClick={()=>{
      navigate(profilePath+"writeblog");
      }}>Write Blog</div>    
     </div>
@@ -67,7 +67,7 @@ function MyProfile(props)
     </div>
     </div>}
     {editProfile&&<div>
-     <div style={{display:"flex",justifyContent:"right"}}><div className="fileinput"><FileBase type="file" multiple={false} onDone={({base64})=>setform({...form,photo:base64})}/></div></div>
+     <div className="justifyRight"><div className="fileinput"><FileBase type="file" multiple={false} onDone={({base64})=>setform({...form,photo:base64})}/></div></div>
      <input required name="collegeName" value={form.collegeName} onChange={(e)=>handleChange(e)} className="writeDetails" type="text" placeholder="College name"></input>
      <textarea required name="Experience" value={form.Experience} onChange={(e)=>handleChange(e)} className="writeExperience" type="text" placeholder="About Yourself"/>
     </div>}

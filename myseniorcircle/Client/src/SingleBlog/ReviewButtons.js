@@ -49,7 +49,7 @@ function ReviewButton(props)
     <FontAwesomeIcon className="like_icon" onClick={handleLike} style={{color:(present?"#ff6347":"")}} size="2x" icon={faThumbsUp}/>
     &nbsp;<div className="like_cnt">
     {(like?.length>0)&&(like.find((item)=>item===curUser)?(like?.length>1?("You and "+Val+" others likes"):"You liked"):(like?.length===1?(like?.length+" like"):(like?.length+" likes")))}  
-    {(like?.length==0)&&"Like"}
+    {(like?.length===0)&&"Like"}
     </div>
     </div>
     <div className="cmnt_but">

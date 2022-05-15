@@ -15,6 +15,30 @@
     padding-top: 10px;
     color: #181D31;    
 }
+.SingleBlogOuter{
+    background-color: #ddeeff;
+    padding-bottom: 20px;
+}
+.AlignRight{
+    text-align: right;
+}
+.DisplayFlex{
+    display: flex;
+}
+.justifyRight{
+    display: flex;
+    justify-content: right;
+}
+.justifyAround{
+    display: flex;
+    justify-content: space-around;
+}
+.pointer{
+    cursor: pointer;
+}
+.FitWidth{
+    width: fit-content;
+}
 .singleblog_img{
     height:650px;
     width: 560px;

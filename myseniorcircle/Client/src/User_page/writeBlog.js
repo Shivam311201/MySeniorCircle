@@ -41,7 +41,7 @@ function WriteBlog()
         }
         dispatch(addblog(form,navigate));
     }
-    return (<div style={{display:"flex",justifyContent:"space-around"}}>   
+    return (<div className="justifyAround">   
         <div>
         <div className="writeHead">Write a Blog...</div>
         <input required name="title" onChange={updateForm} className="writeTitle" type="text" placeholder="Title*"></input>

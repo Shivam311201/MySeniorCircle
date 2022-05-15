@@ -97,7 +97,7 @@ function Signup(props)
              <Col className="sign_form" lg={8} md={8} sm={8} xs={12}>
                 <div className="data-3">Create Account</div> 
                 {message!=""&&<div className="animated fadeOut errorSignup" style={{animationDelay: "1s"}}>{message}</div>}
-                <div style={{textAlign:"center"}}>
+                <div className="AlignCenter">
                 <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="firstname" placeholder="First Name"/>
                 <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="lastname" placeholder="Last Name"/>
                 <input className="input_style2" onChange={(e)=>handleChange(e)} type="email" name="emailid" placeholder="Email id"/><br/>
@@ -109,10 +109,10 @@ function Signup(props)
                 </InputAdornment>
                 </div>
                 <button size="md" className="sign_but2" onClick={handleSubmit}>SIGN UP</button>
-                <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
+                <div className="OrStyle">
                   --------- OR --------- 
                 </div>
-                <div style={{textAlign:"center",marginTop:"5px"}}>
+                <div className="googleLogin">
                 <GoogleLogin
                   clientId="348438982756-1sii29uv02r004hm3vqemk8l761arkop.apps.googleusercontent.com"
                   render={(renderProps) => (
@@ -142,7 +142,7 @@ function Signup(props)
              <Col className="sign_form" lg={8} md={8} sm={12} xs={12}>
              <div className="data-3">Create Account</div> 
                 {message!=""&&<div className="animated fadeOut errorSignup" style={{animationDelay: "1s"}}>{message}</div>}
-                <div style={{textAlign:"center"}}>
+                <div className="AlignCenter">
                 <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="firstname" placeholder="First Name"/>
                 <input className="input_style1" onChange={(e)=>handleChange(e)} type="text" name="lastname" placeholder="Last Name"/>
                 <input className="input_style2" onChange={(e)=>handleChange(e)} type="email" name="emailid" placeholder="Email id"/><br/>
@@ -154,10 +154,10 @@ function Signup(props)
                 </InputAdornment>
                 </div>
                 <button size="md" className="sign_but2" onClick={handleSubmit}>SIGN UP</button>
-                <div style={{textAlign:"center",color:'#B9B9B9',marginTop:'10px'}}>
+                <div className="OrStyle">
                 --------- OR --------- 
                 </div>
-                <div style={{textAlign:"center",marginTop:"5px"}}>
+                <div className="googleLogin">
                 <GoogleLogin
                   clientId="348438982756-1sii29uv02r004hm3vqemk8l761arkop.apps.googleusercontent.com"
                   render={(renderProps) => (

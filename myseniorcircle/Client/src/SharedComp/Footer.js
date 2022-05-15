@@ -20,32 +20,32 @@ function Footer() {
        window.addEventListener('resize', handleResize)
      });    
   return (
-    <div style={{backgroundColor:"#0B0D17",color:"white",width:"100%"}}>
+    <div className="FooterOuter">
       <Row className="m-0">
       {winWidth<992&&<Col lg={3} md={12} sm={12} xs={12} className="footer-3"> 
          <b><h4>Stay up to date</h4></b>
          <input type="text" className="Inputstyle" onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = "Your email address"} placeholder="Your email address"></input>
-         <i style={{marginTop:"40px"}} class="fab fa-telegram-plane"></i>
+         <i style={{marginTop:"40px",color:"blue"}} class="fab fa-telegram-plane pointer"></i>
        </Col>}  
       {winWidth>575&&<Col lg={5} md={6} sm={6} xs={12} className="footer-1 m-0">
       Copyright © 2020 Senior Circle.<br/>
       All rights reserved<br/><br/>
           <a
-            style={{ marginLeft: "6px", color: "white" }}
+            className="FooterOuter"
             role="button"
             href="#"
           >
             <Facebook fontSize="medium" />
           </a>
           <a
-            style={{ marginLeft: "6px", color: "white" }}
+            className="FooterOuter"
             role="button"
             href="#"
           >
             <Twitter fontSize="medium" />
           </a>
           <a
-            style={{ marginLeft: "6px", color: "white" }}
+            className="FooterOuter"
             role="button"
             href="#"
           >
@@ -72,21 +72,21 @@ function Footer() {
       Copyright © 2020 Senior Circle.<br/>
       All rights reserved<br/><br/>
           <a
-            style={{ marginLeft: "6px", color: "white" }}
+            className="FooterOuter"
             role="button"
             href="#"
           >
             <Facebook fontSize="medium" />
           </a>
           <a
-            style={{ marginLeft: "6px", color: "white" }}
+            className="FooterOuter"
             role="button"
             href="#"
           >
             <Twitter fontSize="medium" />
           </a>
           <a
-            style={{ marginLeft: "6px", color: "white" }}
+            className="FooterOuter"
             role="button"
             href="#"
           >

@@ -14,7 +14,7 @@ function Blog(props)
     const {user}=useSelector((state)=>state.posts);
     const {post}=useSelector((state)=>state.posts);
     
-    const [comment,setcomment]=useState(post.comments);
+    const [comment,setcomment]=useState(post?.comments);
     const Myname=user.firstname+" "+user.lastname;
     const myRef=useRef();
     const dispatch=useDispatch();
@@ -25,9 +25,9 @@ function Blog(props)
 
     const [mycmnt,setMycmnt]=useState(commentForm);
     useEffect(()=>{
-        setcomment(post.comments);
+        setcomment(post?.comments);
         setMycmnt(commentForm);
-    },[user,post.comments]);
+    },[user,post?.comments]);
 
     function handleChange(e){
         setMycmnt({...mycmnt,[e.target.name]:e.target.value});
@@ -45,7 +45,7 @@ function Blog(props)
         else setcomment([mycmnt]);
         setMycmnt(commentForm);
     }
-    return (<div style={{backgroundColor:"#ddeeff",paddingBottom:"20px"}}>
+    return (<div className="SingleBlogOuter">
         <div className="singleBlog_title">{post?.title}</div>
         <div className="singleblog_date">Published on {post.posted}</div>
         <BlogOpinion user={post?.user} postId={post?._id} myRef={myRef} winWidth={props.winWidth}/>
@@ -56,7 +56,7 @@ function Blog(props)
         <div className="outerComment">
         <div className="end_line1"></div>
         <Row className="m-0 p-0">
-        <Col className="m-0 p-0" lg={2} md={2} sm={2} xs={2} style={{textAlign:"right"}}>
+        <Col className="m-0 p-0 AlignRight" lg={2} md={2} sm={2} xs={2}>
            <img src={user.photo?user.photo:Profile} className="userPhoto"/> 
         </Col>
         <Col className="m-0 p-0" lg={10} md={10} sm={10} xs={10}>

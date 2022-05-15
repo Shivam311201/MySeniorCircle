@@ -167,6 +167,10 @@
     font-weight: 500;
     margin-top: 170px;
 }
+.justify-around{
+    display: flex;
+    justify-content: space-around;
+}
 @media screen and (max-width:1600px){
     .blog_sidebar1,.blog_sidebar{
         width: 500px;

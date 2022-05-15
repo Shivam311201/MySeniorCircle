@@ -17,6 +17,18 @@
     margin-top: 15px;
     border: solid #192734 4px;
 }
+.Row_color{
+    background-color:#ddeeff;
+}
+.justify-around{
+  display: flex;
+  justify-content: space-around;
+}
+.developer_outer{
+    padding-bottom: 30px;
+    text-align: center;
+    background-color: #ddeeff;
+}
 .content_developer{
     font-family: 'Roboto Slab', serif;
     font-size: 18px; 

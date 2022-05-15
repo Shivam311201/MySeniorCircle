@@ -7,8 +7,8 @@ function BlogOpinion(props)
 {
   const {post}=useSelector((state)=>state.posts);
 
-  return (<div style={{display:"flex"}}>
-  <img className="singleblog_img" src={post.blogphoto}/>
+  return (<div className="DisplayFlex">
+  <img className="singleblog_img" src={post.blogphoto} alt="BlogImage"/>
   {props.winWidth>750&&<div className="button_grp">
     <ReviewButton postId={props.postId} user={props.user} myRef={props.myRef}/>
   </div>}

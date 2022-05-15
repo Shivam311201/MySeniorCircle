@@ -34,6 +34,29 @@
     flex-direction: row;
     margin-left: 430px;
 }
+.justify-around{
+    display: flex;
+    justify-content: space-around;
+}
+.FooterOuter{
+    background-color: #0B0D17;
+    color: white;
+    width: 100%;
+}
+.FooterButton{
+    margin-left: 6px;
+    color: white;
+}
+.DisplayFlex{
+    display: flex;
+}
+.TextDecoration{
+    text-decoration: none;
+}
+.FlexRowReverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
 .nav_options{
     margin-top: 13px;
     font-family: 'Roboto Slab', serif;
@@ -45,6 +68,9 @@
 .nav_options:hover{
     color:dimgray;
     transition-duration: 0.3s;
+    cursor: pointer;
+}
+.pointer{
     cursor: pointer;
 }
 .Logo_title{

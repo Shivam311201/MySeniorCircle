@@ -92,6 +92,22 @@ margin-top: 3%;
   margin-left: 70px;
   margin-top: 70px;
 }
+.defineColor{
+  background-color:#e7e7e8;
+}
+.OrStyle{
+  text-align: center;
+  color: #B9B9B9;
+  margin-top: 10px;
+}
+.AlignCenter{
+  text-align: center;
+}
+.googleLogin{
+  text-align: center;
+  margin-top: 5px;
+  background-color: white;
+}
 .outercircle2{
   border: #0B0D17 solid 5px; 
   border-radius: 1000px;

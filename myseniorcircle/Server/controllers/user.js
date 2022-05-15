@@ -86,16 +86,20 @@ export const getUser=async(req,res)=>{
 export const updateUser=async(req,res)=>{
   const {emailid,photo,Experience,collegeName,token}=req.body;
   try {
-    const OldUser=await User.findOne({emailid});
-    
+    const OldUser=
+    await User.findOne({emailid});
     if (!OldUser)
-    return res.status(400).json({ message: "User doesn't exists" });
+    return res.status(400).json({
+    message: "User doesn't exists" 
+      });
 
     OldUser.photo=photo;
     OldUser.Experience=Experience;
     OldUser.collegeName=collegeName;
 
-    const updatedUser = await User.findByIdAndUpdate(OldUser._id, OldUser, { new: true });
+    const updatedUser =
+     await User.findByIdAndUpdate(
+       OldUser._id, OldUser, { new: true });
     res.status(201).json({result:updatedUser,token,message:"Profile updated successfully !!"});
     
   } catch (error) {
