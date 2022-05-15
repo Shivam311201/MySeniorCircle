@@ -10,38 +10,46 @@ export const addBlog = async (req, res) => {
     } catch (error) {
         res.status(409).json({
             message: error.message
-        }); }
+        });
+    }
 }
 
 export const fetchAllblogs = async (req, res) => {
     try {
-    const allBlogs =
-    await Blog.find();
-    res.status(200).json(allBlogs);
+        const allBlogs =
+            await Blog.find();
+        res.status(200).json(allBlogs);
     } catch (error) {
         res.status(404).json({
-    message: error.message }); }
+            message: error.message
+        });
+    }
 }
 
 export const fetchCustomBlog = async (req, res) => {
     const { id } = req.params;
-    try { const MyBlog = 
-        await Blog.findById(id);
-    res.status(200).json(MyBlog);
+    try {
+        const MyBlog =
+            await Blog.findById(id);
+        res.status(200).json(MyBlog);
     } catch (error) {
         res.status(404).json({
-    message: error.message });}
+            message: error.message
+        });
+    }
 }
 
 export const deleteCustomBlog = async (req, res) => {
     const { id } = req.params;
     try {
-       await Blog.findByIdAndRemove(id);
-       res.json({ message:
-       "Post deleted successfully." });
+        await Blog.findByIdAndRemove(id);
+        res.json({
+            message:
+                "Post deleted successfully."
+        });
     } catch (error) {
-       res.status(404).json(
-       { message: error.message });
+        res.status(404).json(
+            { message: error.message });
     }
 }
 
@@ -75,12 +83,12 @@ export const CommentCustomBlog = async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    const blog = 
-    await Blog.findById(id);
-    blog.comments.push({username,data});
-    const updatedBlog = 
-    await Blog.findByIdAndUpdate(
-        id, blog, { new: true });
+    const blog =
+        await Blog.findById(id);
+    blog.comments.push({ username, data });
+    const updatedBlog =
+        await Blog.findByIdAndUpdate(
+            id, blog, { new: true });
     res.status(200).json(updatedBlog);
 }
 export const fetchBySearch = async (req, res) => {
